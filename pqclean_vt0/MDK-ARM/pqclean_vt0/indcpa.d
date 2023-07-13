@@ -1,0 +1,11 @@
+pqclean_vt0\indcpa.o: ..\Core\Src\kyber768\indcpa.c
+pqclean_vt0\indcpa.o: ..\Core\Src\kyber768\indcpa.h
+pqclean_vt0\indcpa.o: ..\Core\Src\kyber768\params.h
+pqclean_vt0\indcpa.o: ..\Core\Src\kyber768\polyvec.h
+pqclean_vt0\indcpa.o: ..\Core\Src\kyber768\poly.h
+pqclean_vt0\indcpa.o: E:\keil515\ARM\ARMCC\Bin\..\include\stdint.h
+pqclean_vt0\indcpa.o: ..\Core\Src\kyber768\ntt.h
+pqclean_vt0\indcpa.o: ..\Core\Src\common\randombytes.h
+pqclean_vt0\indcpa.o: E:\keil515\ARM\ARMCC\Bin\..\include\stddef.h
+pqclean_vt0\indcpa.o: ..\Core\Src\kyber768\symmetric.h
+pqclean_vt0\indcpa.o: ..\Core\Src\common\fips202.h

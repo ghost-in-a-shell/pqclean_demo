@@ -1,0 +1,12 @@
+pqclean_vt0\kem.o: ..\Core\Src\kyber768\kem.c
+pqclean_vt0\kem.o: ..\Core\Src\kyber768\indcpa.h
+pqclean_vt0\kem.o: ..\Core\Src\kyber768\params.h
+pqclean_vt0\kem.o: ..\Core\Src\kyber768\polyvec.h
+pqclean_vt0\kem.o: ..\Core\Src\kyber768\poly.h
+pqclean_vt0\kem.o: E:\keil515\ARM\ARMCC\Bin\..\include\stdint.h
+pqclean_vt0\kem.o: ..\Core\Src\kyber768\kem.h
+pqclean_vt0\kem.o: ..\Core\Src\common\randombytes.h
+pqclean_vt0\kem.o: E:\keil515\ARM\ARMCC\Bin\..\include\stddef.h
+pqclean_vt0\kem.o: ..\Core\Src\kyber768\symmetric.h
+pqclean_vt0\kem.o: ..\Core\Src\common\fips202.h
+pqclean_vt0\kem.o: ..\Core\Src\kyber768\verify.h
