@@ -31,3 +31,5 @@ pqclean_vt0\randombytes.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr
 pqclean_vt0\randombytes.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 pqclean_vt0\randombytes.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h
 pqclean_vt0\randombytes.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+pqclean_vt0\randombytes.o: ../Core/Inc/rng.h
+pqclean_vt0\randombytes.o: ../Core/Inc/main.h

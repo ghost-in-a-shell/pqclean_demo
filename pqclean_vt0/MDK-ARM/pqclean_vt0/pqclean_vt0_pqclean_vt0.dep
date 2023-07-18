@@ -291,7 +291,7 @@ I (..\Core\Src\common\aes.h)(0x63525949)
 I (E:\keil515\ARM\ARMCC\include\stdlib.h)(0x54C245B8)
 I (E:\keil515\ARM\ARMCC\include\string.h)(0x54C245B8)
 F (..\Core\Src\common\nistseedexpander.h)(0x63525949)()
-F (..\Core\Src\common\randombytes.c)(0x64AFC42C)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\randombytes.o --omf_browse pqclean_vt0\randombytes.crf --depend pqclean_vt0\randombytes.d)
+F (..\Core\Src\common\randombytes.c)(0x64B65006)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\randombytes.o --omf_browse pqclean_vt0\randombytes.crf --depend pqclean_vt0\randombytes.d)
 I (..\Core\Src\common\randombytes.h)(0x64AFC0AF)
 I (E:\keil515\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (E:\keil515\ARM\ARMCC\include\stddef.h)(0x54C245B8)
@@ -323,6 +323,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x649E3E8A)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x649E3E8A)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h)(0x649E3E8A)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x649E3E8A)
+I (../Core/Inc/rng.h)(0x64AFA91B)
+I (../Core/Inc/main.h)(0x64AFA91C)
 F (..\Core\Src\common\randombytes.h)(0x64AFC0AF)()
 F (..\Core\Src\common\sha2.c)(0x63525949)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\sha2.o --omf_browse pqclean_vt0\sha2.crf --depend pqclean_vt0\sha2.d)
 I (E:\keil515\ARM\ARMCC\include\stddef.h)(0x54C245B8)

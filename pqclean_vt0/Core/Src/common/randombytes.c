@@ -31,11 +31,12 @@ THE SOFTWARE.
 #include "randombytes.h"
 #include "string.h"
 #include "stm32f4xx_hal.h"
+#include "rng.h"
 int randombytes(uint8_t *output, size_t n)
 {
-  RNG_HandleTypeDef hrng;
-  hrng.Instance = RNG;
-
+  //RNG_HandleTypeDef hrng;
+  //hrng.Instance = RNG;
+	MX_RNG_Init();
   size_t i;
   for (i = 0; i < n; i += 4) {
     uint32_t randValue;

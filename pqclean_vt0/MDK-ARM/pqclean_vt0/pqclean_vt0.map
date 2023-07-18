@@ -293,7 +293,9 @@ Section Cross References
     nistseedexpander.o(i.seedexpander) refers to memcpya.o(.text) for __aeabi_memcpy
     nistseedexpander.o(i.seedexpander) refers to nistseedexpander.o(i.AES256_ECB) for AES256_ECB
     nistseedexpander.o(i.seedexpander_init) refers to memcpya.o(.text) for __aeabi_memcpy
+    randombytes.o(i.PQCLEAN_randombytes) refers to rng.o(i.MX_RNG_Init) for MX_RNG_Init
     randombytes.o(i.PQCLEAN_randombytes) refers to stm32f4xx_hal_rng.o(i.HAL_RNG_GenerateRandomNumber) for HAL_RNG_GenerateRandomNumber
+    randombytes.o(i.PQCLEAN_randombytes) refers to rng.o(.bss) for hrng
     sha2.o(i.crypto_hashblocks_sha256) refers to sha2.o(i.load_bigendian_32) for load_bigendian_32
     sha2.o(i.crypto_hashblocks_sha256) refers to sha2.o(i.store_bigendian_32) for store_bigendian_32
     sha2.o(i.crypto_hashblocks_sha512) refers to sha2.o(i.load_bigendian_64) for load_bigendian_64
@@ -1499,87 +1501,87 @@ Image Symbol Table
     i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes 0x08002eac   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes)
     i.PQCLEAN_KYBER768_CLEAN_verify          0x08002ecc   Section        0  verify.o(i.PQCLEAN_KYBER768_CLEAN_verify)
     i.PQCLEAN_randombytes                    0x08002ef0   Section        0  randombytes.o(i.PQCLEAN_randombytes)
-    i.PendSV_Handler                         0x08002f20   Section        0  stm32f4xx_it.o(i.PendSV_Handler)
-    i.SVC_Handler                            0x08002f22   Section        0  stm32f4xx_it.o(i.SVC_Handler)
-    i.SysTick_Handler                        0x08002f24   Section        0  stm32f4xx_it.o(i.SysTick_Handler)
-    i.SystemClock_Config                     0x08002f28   Section        0  main.o(i.SystemClock_Config)
-    i.SystemInit                             0x08002fb4   Section        0  system_stm32f4xx.o(i.SystemInit)
-    i.UART_DMAAbortOnError                   0x08002fc4   Section        0  stm32f4xx_hal_uart.o(i.UART_DMAAbortOnError)
-    UART_DMAAbortOnError                     0x08002fc5   Thumb Code    16  stm32f4xx_hal_uart.o(i.UART_DMAAbortOnError)
-    i.UART_EndRxTransfer                     0x08002fd4   Section        0  stm32f4xx_hal_uart.o(i.UART_EndRxTransfer)
-    UART_EndRxTransfer                       0x08002fd5   Thumb Code    78  stm32f4xx_hal_uart.o(i.UART_EndRxTransfer)
-    i.UART_EndTransmit_IT                    0x08003022   Section        0  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
-    UART_EndTransmit_IT                      0x08003023   Thumb Code    26  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
-    i.UART_Receive_IT                        0x0800303c   Section        0  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
-    UART_Receive_IT                          0x0800303d   Thumb Code   198  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
-    i.UART_SetConfig                         0x08003104   Section        0  stm32f4xx_hal_uart.o(i.UART_SetConfig)
-    UART_SetConfig                           0x08003105   Thumb Code   266  stm32f4xx_hal_uart.o(i.UART_SetConfig)
-    i.UART_Transmit_IT                       0x08003218   Section        0  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
-    UART_Transmit_IT                         0x08003219   Thumb Code    94  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
-    i.UART_WaitOnFlagUntilTimeout            0x08003276   Section        0  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
-    UART_WaitOnFlagUntilTimeout              0x08003277   Thumb Code   116  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
-    i.USART1_IRQHandler                      0x080032ec   Section        0  stm32f4xx_it.o(i.USART1_IRQHandler)
-    i.UsageFault_Handler                     0x080032f8   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
-    i.__0printf$8                            0x080032fc   Section        0  printf8.o(i.__0printf$8)
-    i.__NVIC_SetPriority                     0x0800331c   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x0800331d   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.__scatterload_copy                     0x0800333c   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x0800334a   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x0800334c   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x0800335c   Section        0  printf8.o(i._printf_core)
-    _printf_core                             0x0800335d   Thumb Code   996  printf8.o(i._printf_core)
-    i._printf_post_padding                   0x0800376c   Section        0  printf8.o(i._printf_post_padding)
-    _printf_post_padding                     0x0800376d   Thumb Code    36  printf8.o(i._printf_post_padding)
-    i._printf_pre_padding                    0x08003790   Section        0  printf8.o(i._printf_pre_padding)
-    _printf_pre_padding                      0x08003791   Thumb Code    46  printf8.o(i._printf_pre_padding)
-    i.cbd2                                   0x080037be   Section        0  cbd.o(i.cbd2)
-    cbd2                                     0x080037bf   Thumb Code    84  cbd.o(i.cbd2)
-    i.exit                                   0x08003814   Section        0  aes.o(i.exit)
-    i.fputc                                  0x08003824   Section        0  stm32f4xx_hal.o(i.fputc)
-    i.fqmul                                  0x0800383c   Section        0  ntt.o(i.fqmul)
-    fqmul                                    0x0800383d   Thumb Code     6  ntt.o(i.fqmul)
-    i.free                                   0x08003844   Section        0  malloc.o(i.free)
-    i.generate_and_display_keys              0x08003894   Section        0  main.o(i.generate_and_display_keys)
-    i.keccak_absorb                          0x080039cc   Section        0  fips202.o(i.keccak_absorb)
-    keccak_absorb                            0x080039cd   Thumb Code   174  fips202.o(i.keccak_absorb)
-    i.keccak_squeezeblocks                   0x08003a7a   Section        0  fips202.o(i.keccak_squeezeblocks)
-    keccak_squeezeblocks                     0x08003a7b   Thumb Code    58  fips202.o(i.keccak_squeezeblocks)
-    i.load32_littleendian                    0x08003ab4   Section        0  cbd.o(i.load32_littleendian)
-    load32_littleendian                      0x08003ab5   Thumb Code    22  cbd.o(i.load32_littleendian)
-    i.load64                                 0x08003aca   Section        0  fips202.o(i.load64)
-    load64                                   0x08003acb   Thumb Code    42  fips202.o(i.load64)
-    i.main                                   0x08003af4   Section        0  main.o(i.main)
-    i.malloc                                 0x08003b24   Section        0  malloc.o(i.malloc)
-    i.pack_ciphertext                        0x08003b90   Section        0  indcpa.o(i.pack_ciphertext)
-    pack_ciphertext                          0x08003b91   Thumb Code    26  indcpa.o(i.pack_ciphertext)
-    i.pack_pk                                0x08003baa   Section        0  indcpa.o(i.pack_pk)
-    pack_pk                                  0x08003bab   Thumb Code    30  indcpa.o(i.pack_pk)
-    i.pack_sk                                0x08003bc8   Section        0  indcpa.o(i.pack_sk)
-    pack_sk                                  0x08003bc9   Thumb Code     4  indcpa.o(i.pack_sk)
-    i.rej_uniform                            0x08003bcc   Section        0  indcpa.o(i.rej_uniform)
-    rej_uniform                              0x08003bcd   Thumb Code    82  indcpa.o(i.rej_uniform)
-    i.sha3_256                               0x08003c1e   Section        0  fips202.o(i.sha3_256)
-    i.sha3_512                               0x08003c52   Section        0  fips202.o(i.sha3_512)
-    i.shake128_absorb                        0x08003c86   Section        0  fips202.o(i.shake128_absorb)
-    i.shake128_ctx_release                   0x08003cae   Section        0  fips202.o(i.shake128_ctx_release)
-    i.shake128_squeezeblocks                 0x08003cb4   Section        0  fips202.o(i.shake128_squeezeblocks)
-    i.shake256                               0x08003cbc   Section        0  fips202.o(i.shake256)
-    i.shake256_absorb                        0x08003d18   Section        0  fips202.o(i.shake256_absorb)
-    i.shake256_ctx_release                   0x08003d40   Section        0  fips202.o(i.shake256_ctx_release)
-    i.shake256_squeezeblocks                 0x08003d46   Section        0  fips202.o(i.shake256_squeezeblocks)
-    i.store64                                0x08003d4e   Section        0  fips202.o(i.store64)
-    store64                                  0x08003d4f   Thumb Code    34  fips202.o(i.store64)
-    i.unpack_ciphertext                      0x08003d70   Section        0  indcpa.o(i.unpack_ciphertext)
-    unpack_ciphertext                        0x08003d71   Thumb Code    26  indcpa.o(i.unpack_ciphertext)
-    i.unpack_pk                              0x08003d8a   Section        0  indcpa.o(i.unpack_pk)
-    unpack_pk                                0x08003d8b   Thumb Code    30  indcpa.o(i.unpack_pk)
-    i.unpack_sk                              0x08003da8   Section        0  indcpa.o(i.unpack_sk)
-    unpack_sk                                0x08003da9   Thumb Code     4  indcpa.o(i.unpack_sk)
-    .constdata                               0x08003dac   Section      256  ntt.o(.constdata)
-    .constdata                               0x08003eb0   Section      192  fips202.o(.constdata)
-    KeccakF_RoundConstants                   0x08003eb0   Data         192  fips202.o(.constdata)
-    .constdata                               0x08003f70   Section       16  system_stm32f4xx.o(.constdata)
-    .constdata                               0x08003f80   Section        8  system_stm32f4xx.o(.constdata)
+    i.PendSV_Handler                         0x08002f1c   Section        0  stm32f4xx_it.o(i.PendSV_Handler)
+    i.SVC_Handler                            0x08002f1e   Section        0  stm32f4xx_it.o(i.SVC_Handler)
+    i.SysTick_Handler                        0x08002f20   Section        0  stm32f4xx_it.o(i.SysTick_Handler)
+    i.SystemClock_Config                     0x08002f24   Section        0  main.o(i.SystemClock_Config)
+    i.SystemInit                             0x08002fb0   Section        0  system_stm32f4xx.o(i.SystemInit)
+    i.UART_DMAAbortOnError                   0x08002fc0   Section        0  stm32f4xx_hal_uart.o(i.UART_DMAAbortOnError)
+    UART_DMAAbortOnError                     0x08002fc1   Thumb Code    16  stm32f4xx_hal_uart.o(i.UART_DMAAbortOnError)
+    i.UART_EndRxTransfer                     0x08002fd0   Section        0  stm32f4xx_hal_uart.o(i.UART_EndRxTransfer)
+    UART_EndRxTransfer                       0x08002fd1   Thumb Code    78  stm32f4xx_hal_uart.o(i.UART_EndRxTransfer)
+    i.UART_EndTransmit_IT                    0x0800301e   Section        0  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
+    UART_EndTransmit_IT                      0x0800301f   Thumb Code    26  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
+    i.UART_Receive_IT                        0x08003038   Section        0  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
+    UART_Receive_IT                          0x08003039   Thumb Code   198  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
+    i.UART_SetConfig                         0x08003100   Section        0  stm32f4xx_hal_uart.o(i.UART_SetConfig)
+    UART_SetConfig                           0x08003101   Thumb Code   266  stm32f4xx_hal_uart.o(i.UART_SetConfig)
+    i.UART_Transmit_IT                       0x08003214   Section        0  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
+    UART_Transmit_IT                         0x08003215   Thumb Code    94  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
+    i.UART_WaitOnFlagUntilTimeout            0x08003272   Section        0  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
+    UART_WaitOnFlagUntilTimeout              0x08003273   Thumb Code   116  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
+    i.USART1_IRQHandler                      0x080032e8   Section        0  stm32f4xx_it.o(i.USART1_IRQHandler)
+    i.UsageFault_Handler                     0x080032f4   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
+    i.__0printf$8                            0x080032f8   Section        0  printf8.o(i.__0printf$8)
+    i.__NVIC_SetPriority                     0x08003318   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x08003319   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.__scatterload_copy                     0x08003338   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08003346   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08003348   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x08003358   Section        0  printf8.o(i._printf_core)
+    _printf_core                             0x08003359   Thumb Code   996  printf8.o(i._printf_core)
+    i._printf_post_padding                   0x08003768   Section        0  printf8.o(i._printf_post_padding)
+    _printf_post_padding                     0x08003769   Thumb Code    36  printf8.o(i._printf_post_padding)
+    i._printf_pre_padding                    0x0800378c   Section        0  printf8.o(i._printf_pre_padding)
+    _printf_pre_padding                      0x0800378d   Thumb Code    46  printf8.o(i._printf_pre_padding)
+    i.cbd2                                   0x080037ba   Section        0  cbd.o(i.cbd2)
+    cbd2                                     0x080037bb   Thumb Code    84  cbd.o(i.cbd2)
+    i.exit                                   0x08003810   Section        0  aes.o(i.exit)
+    i.fputc                                  0x08003820   Section        0  stm32f4xx_hal.o(i.fputc)
+    i.fqmul                                  0x08003838   Section        0  ntt.o(i.fqmul)
+    fqmul                                    0x08003839   Thumb Code     6  ntt.o(i.fqmul)
+    i.free                                   0x08003840   Section        0  malloc.o(i.free)
+    i.generate_and_display_keys              0x08003890   Section        0  main.o(i.generate_and_display_keys)
+    i.keccak_absorb                          0x080039c8   Section        0  fips202.o(i.keccak_absorb)
+    keccak_absorb                            0x080039c9   Thumb Code   174  fips202.o(i.keccak_absorb)
+    i.keccak_squeezeblocks                   0x08003a76   Section        0  fips202.o(i.keccak_squeezeblocks)
+    keccak_squeezeblocks                     0x08003a77   Thumb Code    58  fips202.o(i.keccak_squeezeblocks)
+    i.load32_littleendian                    0x08003ab0   Section        0  cbd.o(i.load32_littleendian)
+    load32_littleendian                      0x08003ab1   Thumb Code    22  cbd.o(i.load32_littleendian)
+    i.load64                                 0x08003ac6   Section        0  fips202.o(i.load64)
+    load64                                   0x08003ac7   Thumb Code    42  fips202.o(i.load64)
+    i.main                                   0x08003af0   Section        0  main.o(i.main)
+    i.malloc                                 0x08003b20   Section        0  malloc.o(i.malloc)
+    i.pack_ciphertext                        0x08003b8c   Section        0  indcpa.o(i.pack_ciphertext)
+    pack_ciphertext                          0x08003b8d   Thumb Code    26  indcpa.o(i.pack_ciphertext)
+    i.pack_pk                                0x08003ba6   Section        0  indcpa.o(i.pack_pk)
+    pack_pk                                  0x08003ba7   Thumb Code    30  indcpa.o(i.pack_pk)
+    i.pack_sk                                0x08003bc4   Section        0  indcpa.o(i.pack_sk)
+    pack_sk                                  0x08003bc5   Thumb Code     4  indcpa.o(i.pack_sk)
+    i.rej_uniform                            0x08003bc8   Section        0  indcpa.o(i.rej_uniform)
+    rej_uniform                              0x08003bc9   Thumb Code    82  indcpa.o(i.rej_uniform)
+    i.sha3_256                               0x08003c1a   Section        0  fips202.o(i.sha3_256)
+    i.sha3_512                               0x08003c4e   Section        0  fips202.o(i.sha3_512)
+    i.shake128_absorb                        0x08003c82   Section        0  fips202.o(i.shake128_absorb)
+    i.shake128_ctx_release                   0x08003caa   Section        0  fips202.o(i.shake128_ctx_release)
+    i.shake128_squeezeblocks                 0x08003cb0   Section        0  fips202.o(i.shake128_squeezeblocks)
+    i.shake256                               0x08003cb8   Section        0  fips202.o(i.shake256)
+    i.shake256_absorb                        0x08003d14   Section        0  fips202.o(i.shake256_absorb)
+    i.shake256_ctx_release                   0x08003d3c   Section        0  fips202.o(i.shake256_ctx_release)
+    i.shake256_squeezeblocks                 0x08003d42   Section        0  fips202.o(i.shake256_squeezeblocks)
+    i.store64                                0x08003d4a   Section        0  fips202.o(i.store64)
+    store64                                  0x08003d4b   Thumb Code    34  fips202.o(i.store64)
+    i.unpack_ciphertext                      0x08003d6c   Section        0  indcpa.o(i.unpack_ciphertext)
+    unpack_ciphertext                        0x08003d6d   Thumb Code    26  indcpa.o(i.unpack_ciphertext)
+    i.unpack_pk                              0x08003d86   Section        0  indcpa.o(i.unpack_pk)
+    unpack_pk                                0x08003d87   Thumb Code    30  indcpa.o(i.unpack_pk)
+    i.unpack_sk                              0x08003da4   Section        0  indcpa.o(i.unpack_sk)
+    unpack_sk                                0x08003da5   Thumb Code     4  indcpa.o(i.unpack_sk)
+    .constdata                               0x08003da8   Section      256  ntt.o(.constdata)
+    .constdata                               0x08003ea8   Section      192  fips202.o(.constdata)
+    KeccakF_RoundConstants                   0x08003ea8   Data         192  fips202.o(.constdata)
+    .constdata                               0x08003f68   Section       16  system_stm32f4xx.o(.constdata)
+    .constdata                               0x08003f78   Section        8  system_stm32f4xx.o(.constdata)
     .data                                    0x20000000   Section       12  stm32f4xx_hal.o(.data)
     .data                                    0x2000000c   Section        4  system_stm32f4xx.o(.data)
     .data                                    0x20000010   Section        4  stdout.o(.data)
@@ -1832,40 +1834,40 @@ Image Symbol Table
     PQCLEAN_KYBER768_CLEAN_polyvec_reduce    0x08002e97   Thumb Code    22  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce)
     PQCLEAN_KYBER768_CLEAN_polyvec_tobytes   0x08002ead   Thumb Code    32  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes)
     PQCLEAN_KYBER768_CLEAN_verify            0x08002ecd   Thumb Code    36  verify.o(i.PQCLEAN_KYBER768_CLEAN_verify)
-    PQCLEAN_randombytes                      0x08002ef1   Thumb Code    44  randombytes.o(i.PQCLEAN_randombytes)
-    PendSV_Handler                           0x08002f21   Thumb Code     2  stm32f4xx_it.o(i.PendSV_Handler)
-    SVC_Handler                              0x08002f23   Thumb Code     2  stm32f4xx_it.o(i.SVC_Handler)
-    SysTick_Handler                          0x08002f25   Thumb Code     4  stm32f4xx_it.o(i.SysTick_Handler)
-    SystemClock_Config                       0x08002f29   Thumb Code   130  main.o(i.SystemClock_Config)
-    SystemInit                               0x08002fb5   Thumb Code    12  system_stm32f4xx.o(i.SystemInit)
-    USART1_IRQHandler                        0x080032ed   Thumb Code     6  stm32f4xx_it.o(i.USART1_IRQHandler)
-    UsageFault_Handler                       0x080032f9   Thumb Code     2  stm32f4xx_it.o(i.UsageFault_Handler)
-    __0printf$8                              0x080032fd   Thumb Code    22  printf8.o(i.__0printf$8)
-    __1printf$8                              0x080032fd   Thumb Code     0  printf8.o(i.__0printf$8)
-    __2printf                                0x080032fd   Thumb Code     0  printf8.o(i.__0printf$8)
-    __scatterload_copy                       0x0800333d   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x0800334b   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x0800334d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    exit                                     0x08003815   Thumb Code     8  aes.o(i.exit)
-    fputc                                    0x08003825   Thumb Code    20  stm32f4xx_hal.o(i.fputc)
-    free                                     0x08003845   Thumb Code    76  malloc.o(i.free)
-    generate_and_display_keys                0x08003895   Thumb Code   218  main.o(i.generate_and_display_keys)
-    main                                     0x08003af5   Thumb Code    32  main.o(i.main)
-    malloc                                   0x08003b25   Thumb Code    92  malloc.o(i.malloc)
-    sha3_256                                 0x08003c1f   Thumb Code    52  fips202.o(i.sha3_256)
-    sha3_512                                 0x08003c53   Thumb Code    52  fips202.o(i.sha3_512)
-    shake128_absorb                          0x08003c87   Thumb Code    40  fips202.o(i.shake128_absorb)
-    shake128_ctx_release                     0x08003caf   Thumb Code     6  fips202.o(i.shake128_ctx_release)
-    shake128_squeezeblocks                   0x08003cb5   Thumb Code     8  fips202.o(i.shake128_squeezeblocks)
-    shake256                                 0x08003cbd   Thumb Code    92  fips202.o(i.shake256)
-    shake256_absorb                          0x08003d19   Thumb Code    40  fips202.o(i.shake256_absorb)
-    shake256_ctx_release                     0x08003d41   Thumb Code     6  fips202.o(i.shake256_ctx_release)
-    shake256_squeezeblocks                   0x08003d47   Thumb Code     8  fips202.o(i.shake256_squeezeblocks)
-    PQCLEAN_KYBER768_CLEAN_zetas             0x08003dac   Data         256  ntt.o(.constdata)
-    AHBPrescTable                            0x08003f70   Data          16  system_stm32f4xx.o(.constdata)
-    APBPrescTable                            0x08003f80   Data           8  system_stm32f4xx.o(.constdata)
-    Region$$Table$$Base                      0x08003f88   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003fa8   Number         0  anon$$obj.o(Region$$Table)
+    PQCLEAN_randombytes                      0x08002ef1   Thumb Code    40  randombytes.o(i.PQCLEAN_randombytes)
+    PendSV_Handler                           0x08002f1d   Thumb Code     2  stm32f4xx_it.o(i.PendSV_Handler)
+    SVC_Handler                              0x08002f1f   Thumb Code     2  stm32f4xx_it.o(i.SVC_Handler)
+    SysTick_Handler                          0x08002f21   Thumb Code     4  stm32f4xx_it.o(i.SysTick_Handler)
+    SystemClock_Config                       0x08002f25   Thumb Code   130  main.o(i.SystemClock_Config)
+    SystemInit                               0x08002fb1   Thumb Code    12  system_stm32f4xx.o(i.SystemInit)
+    USART1_IRQHandler                        0x080032e9   Thumb Code     6  stm32f4xx_it.o(i.USART1_IRQHandler)
+    UsageFault_Handler                       0x080032f5   Thumb Code     2  stm32f4xx_it.o(i.UsageFault_Handler)
+    __0printf$8                              0x080032f9   Thumb Code    22  printf8.o(i.__0printf$8)
+    __1printf$8                              0x080032f9   Thumb Code     0  printf8.o(i.__0printf$8)
+    __2printf                                0x080032f9   Thumb Code     0  printf8.o(i.__0printf$8)
+    __scatterload_copy                       0x08003339   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08003347   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08003349   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    exit                                     0x08003811   Thumb Code     8  aes.o(i.exit)
+    fputc                                    0x08003821   Thumb Code    20  stm32f4xx_hal.o(i.fputc)
+    free                                     0x08003841   Thumb Code    76  malloc.o(i.free)
+    generate_and_display_keys                0x08003891   Thumb Code   218  main.o(i.generate_and_display_keys)
+    main                                     0x08003af1   Thumb Code    32  main.o(i.main)
+    malloc                                   0x08003b21   Thumb Code    92  malloc.o(i.malloc)
+    sha3_256                                 0x08003c1b   Thumb Code    52  fips202.o(i.sha3_256)
+    sha3_512                                 0x08003c4f   Thumb Code    52  fips202.o(i.sha3_512)
+    shake128_absorb                          0x08003c83   Thumb Code    40  fips202.o(i.shake128_absorb)
+    shake128_ctx_release                     0x08003cab   Thumb Code     6  fips202.o(i.shake128_ctx_release)
+    shake128_squeezeblocks                   0x08003cb1   Thumb Code     8  fips202.o(i.shake128_squeezeblocks)
+    shake256                                 0x08003cb9   Thumb Code    92  fips202.o(i.shake256)
+    shake256_absorb                          0x08003d15   Thumb Code    40  fips202.o(i.shake256_absorb)
+    shake256_ctx_release                     0x08003d3d   Thumb Code     6  fips202.o(i.shake256_ctx_release)
+    shake256_squeezeblocks                   0x08003d43   Thumb Code     8  fips202.o(i.shake256_squeezeblocks)
+    PQCLEAN_KYBER768_CLEAN_zetas             0x08003da8   Data         256  ntt.o(.constdata)
+    AHBPrescTable                            0x08003f68   Data          16  system_stm32f4xx.o(.constdata)
+    APBPrescTable                            0x08003f78   Data           8  system_stm32f4xx.o(.constdata)
+    Region$$Table$$Base                      0x08003f80   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08003fa0   Number         0  anon$$obj.o(Region$$Table)
     uwTickFreq                               0x20000000   Data           1  stm32f4xx_hal.o(.data)
     uwTickPrio                               0x20000004   Data           4  stm32f4xx_hal.o(.data)
     uwTick                                   0x20000008   Data           4  stm32f4xx_hal.o(.data)
@@ -1887,9 +1889,9 @@ Memory Map of the image
 
   Image Entry point : 0x0800019d
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00003fc4, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00003fbc, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x08000000, Size: 0x00003fa8, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x08000000, Size: 0x00003fa0, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1996,70 +1998,69 @@ Memory Map of the image
     0x08002e96   0x00000016   Code   RO          666    i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce  polyvec.o
     0x08002eac   0x00000020   Code   RO          667    i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes  polyvec.o
     0x08002ecc   0x00000024   Code   RO          759    i.PQCLEAN_KYBER768_CLEAN_verify  verify.o
-    0x08002ef0   0x00000030   Code   RO         1309    i.PQCLEAN_randombytes  randombytes.o
-    0x08002f20   0x00000002   Code   RO          276    i.PendSV_Handler    stm32f4xx_it.o
-    0x08002f22   0x00000002   Code   RO          277    i.SVC_Handler       stm32f4xx_it.o
-    0x08002f24   0x00000004   Code   RO          278    i.SysTick_Handler   stm32f4xx_it.o
-    0x08002f28   0x0000008c   Code   RO           14    i.SystemClock_Config  main.o
-    0x08002fb4   0x00000010   Code   RO         3316    i.SystemInit        system_stm32f4xx.o
-    0x08002fc4   0x00000010   Code   RO         2990    i.UART_DMAAbortOnError  stm32f4xx_hal_uart.o
-    0x08002fd4   0x0000004e   Code   RO         3000    i.UART_EndRxTransfer  stm32f4xx_hal_uart.o
-    0x08003022   0x0000001a   Code   RO         3001    i.UART_EndTransmit_IT  stm32f4xx_hal_uart.o
-    0x0800303c   0x000000c6   Code   RO         3003    i.UART_Receive_IT   stm32f4xx_hal_uart.o
-    0x08003102   0x00000002   PAD
-    0x08003104   0x00000114   Code   RO         3004    i.UART_SetConfig    stm32f4xx_hal_uart.o
-    0x08003218   0x0000005e   Code   RO         3007    i.UART_Transmit_IT  stm32f4xx_hal_uart.o
-    0x08003276   0x00000074   Code   RO         3008    i.UART_WaitOnFlagUntilTimeout  stm32f4xx_hal_uart.o
-    0x080032ea   0x00000002   PAD
-    0x080032ec   0x0000000c   Code   RO          279    i.USART1_IRQHandler  stm32f4xx_it.o
-    0x080032f8   0x00000002   Code   RO          280    i.UsageFault_Handler  stm32f4xx_it.o
-    0x080032fa   0x00000002   PAD
-    0x080032fc   0x00000020   Code   RO         3572    i.__0printf$8       mc_w.l(printf8.o)
-    0x0800331c   0x00000020   Code   RO         2520    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x0800333c   0x0000000e   Code   RO         3692    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0800334a   0x00000002   Code   RO         3693    i.__scatterload_null  mc_w.l(handlers.o)
-    0x0800334c   0x0000000e   Code   RO         3694    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0800335a   0x00000002   PAD
-    0x0800335c   0x00000410   Code   RO         3579    i._printf_core      mc_w.l(printf8.o)
-    0x0800376c   0x00000024   Code   RO         3580    i._printf_post_padding  mc_w.l(printf8.o)
-    0x08003790   0x0000002e   Code   RO         3581    i._printf_pre_padding  mc_w.l(printf8.o)
-    0x080037be   0x00000054   Code   RO          376    i.cbd2              cbd.o
-    0x08003812   0x00000002   PAD
-    0x08003814   0x00000010   Code   RO          805    i.exit              aes.o
-    0x08003824   0x00000018   Code   RO         2665    i.fputc             stm32f4xx_hal.o
-    0x0800383c   0x00000006   Code   RO          528    i.fqmul             ntt.o
-    0x08003842   0x00000002   PAD
-    0x08003844   0x00000050   Code   RO         3626    i.free              mc_w.l(malloc.o)
-    0x08003894   0x00000138   Code   RO           15    i.generate_and_display_keys  main.o
-    0x080039cc   0x000000ae   Code   RO          985    i.keccak_absorb     fips202.o
-    0x08003a7a   0x0000003a   Code   RO          990    i.keccak_squeezeblocks  fips202.o
-    0x08003ab4   0x00000016   Code   RO          377    i.load32_littleendian  cbd.o
-    0x08003aca   0x0000002a   Code   RO          991    i.load64            fips202.o
-    0x08003af4   0x00000030   Code   RO           16    i.main              main.o
-    0x08003b24   0x0000006c   Code   RO         3627    i.malloc            mc_w.l(malloc.o)
-    0x08003b90   0x0000001a   Code   RO          415    i.pack_ciphertext   indcpa.o
-    0x08003baa   0x0000001e   Code   RO          416    i.pack_pk           indcpa.o
-    0x08003bc8   0x00000004   Code   RO          417    i.pack_sk           indcpa.o
-    0x08003bcc   0x00000052   Code   RO          418    i.rej_uniform       indcpa.o
-    0x08003c1e   0x00000034   Code   RO          992    i.sha3_256          fips202.o
-    0x08003c52   0x00000034   Code   RO         1004    i.sha3_512          fips202.o
-    0x08003c86   0x00000028   Code   RO         1011    i.shake128_absorb   fips202.o
-    0x08003cae   0x00000006   Code   RO         1013    i.shake128_ctx_release  fips202.o
-    0x08003cb4   0x00000008   Code   RO         1020    i.shake128_squeezeblocks  fips202.o
-    0x08003cbc   0x0000005c   Code   RO         1021    i.shake256          fips202.o
-    0x08003d18   0x00000028   Code   RO         1022    i.shake256_absorb   fips202.o
-    0x08003d40   0x00000006   Code   RO         1024    i.shake256_ctx_release  fips202.o
-    0x08003d46   0x00000008   Code   RO         1031    i.shake256_squeezeblocks  fips202.o
-    0x08003d4e   0x00000022   Code   RO         1032    i.store64           fips202.o
-    0x08003d70   0x0000001a   Code   RO          419    i.unpack_ciphertext  indcpa.o
-    0x08003d8a   0x0000001e   Code   RO          420    i.unpack_pk         indcpa.o
-    0x08003da8   0x00000004   Code   RO          421    i.unpack_sk         indcpa.o
-    0x08003dac   0x00000100   Data   RO          529    .constdata          ntt.o
-    0x08003eac   0x00000004   PAD
-    0x08003eb0   0x000000c0   Data   RO         1033    .constdata          fips202.o
-    0x08003f70   0x00000010   Data   RO         3317    .constdata          system_stm32f4xx.o
-    0x08003f80   0x00000008   Data   RO         3318    .constdata          system_stm32f4xx.o
-    0x08003f88   0x00000020   Data   RO         3690    Region$$Table       anon$$obj.o
+    0x08002ef0   0x0000002c   Code   RO         1309    i.PQCLEAN_randombytes  randombytes.o
+    0x08002f1c   0x00000002   Code   RO          276    i.PendSV_Handler    stm32f4xx_it.o
+    0x08002f1e   0x00000002   Code   RO          277    i.SVC_Handler       stm32f4xx_it.o
+    0x08002f20   0x00000004   Code   RO          278    i.SysTick_Handler   stm32f4xx_it.o
+    0x08002f24   0x0000008c   Code   RO           14    i.SystemClock_Config  main.o
+    0x08002fb0   0x00000010   Code   RO         3316    i.SystemInit        system_stm32f4xx.o
+    0x08002fc0   0x00000010   Code   RO         2990    i.UART_DMAAbortOnError  stm32f4xx_hal_uart.o
+    0x08002fd0   0x0000004e   Code   RO         3000    i.UART_EndRxTransfer  stm32f4xx_hal_uart.o
+    0x0800301e   0x0000001a   Code   RO         3001    i.UART_EndTransmit_IT  stm32f4xx_hal_uart.o
+    0x08003038   0x000000c6   Code   RO         3003    i.UART_Receive_IT   stm32f4xx_hal_uart.o
+    0x080030fe   0x00000002   PAD
+    0x08003100   0x00000114   Code   RO         3004    i.UART_SetConfig    stm32f4xx_hal_uart.o
+    0x08003214   0x0000005e   Code   RO         3007    i.UART_Transmit_IT  stm32f4xx_hal_uart.o
+    0x08003272   0x00000074   Code   RO         3008    i.UART_WaitOnFlagUntilTimeout  stm32f4xx_hal_uart.o
+    0x080032e6   0x00000002   PAD
+    0x080032e8   0x0000000c   Code   RO          279    i.USART1_IRQHandler  stm32f4xx_it.o
+    0x080032f4   0x00000002   Code   RO          280    i.UsageFault_Handler  stm32f4xx_it.o
+    0x080032f6   0x00000002   PAD
+    0x080032f8   0x00000020   Code   RO         3572    i.__0printf$8       mc_w.l(printf8.o)
+    0x08003318   0x00000020   Code   RO         2520    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x08003338   0x0000000e   Code   RO         3692    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08003346   0x00000002   Code   RO         3693    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08003348   0x0000000e   Code   RO         3694    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08003356   0x00000002   PAD
+    0x08003358   0x00000410   Code   RO         3579    i._printf_core      mc_w.l(printf8.o)
+    0x08003768   0x00000024   Code   RO         3580    i._printf_post_padding  mc_w.l(printf8.o)
+    0x0800378c   0x0000002e   Code   RO         3581    i._printf_pre_padding  mc_w.l(printf8.o)
+    0x080037ba   0x00000054   Code   RO          376    i.cbd2              cbd.o
+    0x0800380e   0x00000002   PAD
+    0x08003810   0x00000010   Code   RO          805    i.exit              aes.o
+    0x08003820   0x00000018   Code   RO         2665    i.fputc             stm32f4xx_hal.o
+    0x08003838   0x00000006   Code   RO          528    i.fqmul             ntt.o
+    0x0800383e   0x00000002   PAD
+    0x08003840   0x00000050   Code   RO         3626    i.free              mc_w.l(malloc.o)
+    0x08003890   0x00000138   Code   RO           15    i.generate_and_display_keys  main.o
+    0x080039c8   0x000000ae   Code   RO          985    i.keccak_absorb     fips202.o
+    0x08003a76   0x0000003a   Code   RO          990    i.keccak_squeezeblocks  fips202.o
+    0x08003ab0   0x00000016   Code   RO          377    i.load32_littleendian  cbd.o
+    0x08003ac6   0x0000002a   Code   RO          991    i.load64            fips202.o
+    0x08003af0   0x00000030   Code   RO           16    i.main              main.o
+    0x08003b20   0x0000006c   Code   RO         3627    i.malloc            mc_w.l(malloc.o)
+    0x08003b8c   0x0000001a   Code   RO          415    i.pack_ciphertext   indcpa.o
+    0x08003ba6   0x0000001e   Code   RO          416    i.pack_pk           indcpa.o
+    0x08003bc4   0x00000004   Code   RO          417    i.pack_sk           indcpa.o
+    0x08003bc8   0x00000052   Code   RO          418    i.rej_uniform       indcpa.o
+    0x08003c1a   0x00000034   Code   RO          992    i.sha3_256          fips202.o
+    0x08003c4e   0x00000034   Code   RO         1004    i.sha3_512          fips202.o
+    0x08003c82   0x00000028   Code   RO         1011    i.shake128_absorb   fips202.o
+    0x08003caa   0x00000006   Code   RO         1013    i.shake128_ctx_release  fips202.o
+    0x08003cb0   0x00000008   Code   RO         1020    i.shake128_squeezeblocks  fips202.o
+    0x08003cb8   0x0000005c   Code   RO         1021    i.shake256          fips202.o
+    0x08003d14   0x00000028   Code   RO         1022    i.shake256_absorb   fips202.o
+    0x08003d3c   0x00000006   Code   RO         1024    i.shake256_ctx_release  fips202.o
+    0x08003d42   0x00000008   Code   RO         1031    i.shake256_squeezeblocks  fips202.o
+    0x08003d4a   0x00000022   Code   RO         1032    i.store64           fips202.o
+    0x08003d6c   0x0000001a   Code   RO          419    i.unpack_ciphertext  indcpa.o
+    0x08003d86   0x0000001e   Code   RO          420    i.unpack_pk         indcpa.o
+    0x08003da4   0x00000004   Code   RO          421    i.unpack_sk         indcpa.o
+    0x08003da8   0x00000100   Data   RO          529    .constdata          ntt.o
+    0x08003ea8   0x000000c0   Data   RO         1033    .constdata          fips202.o
+    0x08003f68   0x00000010   Data   RO         3317    .constdata          system_stm32f4xx.o
+    0x08003f78   0x00000008   Data   RO         3318    .constdata          system_stm32f4xx.o
+    0x08003f80   0x00000020   Data   RO         3690    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x0000001c, Max: 0xffffffff, ABSOLUTE)
@@ -2100,7 +2101,7 @@ Image component sizes
        322         12        256          0          0       3533   ntt.o
        700          4          0          0          0      10361   poly.o
        486          0          0          0          0       6623   polyvec.o
-        48          4          0          0          0       1158   randombytes.o
+        44          4          0          0          0       1130   randombytes.o
         48          0          0          0          0       1575   reduce.o
         76         18          0          0         16       1511   rng.o
         36          8        392          0      24576        832   startup_stm32f407xx.o
@@ -2119,9 +2120,9 @@ Image component sizes
         66          0          0          0          0       1766   verify.o
 
     ----------------------------------------------------------------------
-     13734        402        900         16      24660     798890   Object Totals
+     13730        402        896         16      24660     798862   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        20          0          4          0          0          0   (incl. Padding)
+        20          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2167,15 +2168,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     15396        492        900         28      24660     787910   Grand Totals
-     15396        492        900         28      24660     787910   ELF Image Totals
-     15396        492        900         28          0          0   ROM Totals
+     15392        492        896         28      24660     787882   Grand Totals
+     15392        492        896         28      24660     787882   ELF Image Totals
+     15392        492        896         28          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                16296 (  15.91kB)
+    Total RO  Size (Code + RO Data)                16288 (  15.91kB)
     Total RW  Size (RW Data + ZI Data)             24688 (  24.11kB)
-    Total ROM Size (Code + RO Data + RW Data)      16324 (  15.94kB)
+    Total ROM Size (Code + RO Data + RW Data)      16316 (  15.93kB)
 
 ==============================================================================
 
