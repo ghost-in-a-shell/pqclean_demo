@@ -1,6 +1,6 @@
 Dependencies for Project 'pqclean_vt0', Target 'pqclean_vt0': (DO NOT MODIFY !)
 F (startup_stm32f407xx.s)(0x64AFB2BE)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 515" --pd "_RTE_ SETA 1" --pd "STM32F407xx SETA 1"--list startup_stm32f407xx.lst --xref -o pqclean_vt0\startup_stm32f407xx.o --depend pqclean_vt0\startup_stm32f407xx.d)
-F (../Core/Src/main.c)(0x64AFD61F)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\main.o --omf_browse pqclean_vt0\main.crf --depend pqclean_vt0\main.d)
+F (../Core/Src/main.c)(0x64C7257B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\main.o --omf_browse pqclean_vt0\main.crf --depend pqclean_vt0\main.d)
 I (../Core/Inc/main.h)(0x64AFA91C)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x649E3E8A)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x64AFA91C)
@@ -35,6 +35,10 @@ I (../Core/Inc/rng.h)(0x64AFA91B)
 I (../Core/Inc/usart.h)(0x64AFA91C)
 I (../Core/Inc/gpio.h)(0x64AFA91B)
 I (..\Core\Src\kyber768\api.h)(0x63525949)
+I (..\Core\Src\kyber768\indcpa.h)(0x64C7213B)
+I (..\Core\Src\kyber768\params.h)(0x64BE4600)
+I (..\Core\Src\kyber768\polyvec.h)(0x63525949)
+I (..\Core\Src\kyber768\poly.h)(0x63525949)
 F (../Core/Src/gpio.c)(0x64AFA91B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\gpio.o --omf_browse pqclean_vt0\gpio.crf --depend pqclean_vt0\gpio.d)
 I (../Core/Inc/gpio.h)(0x64AFA91B)
 I (../Core/Inc/main.h)(0x64AFA91C)
@@ -197,13 +201,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x649E3E8A)
 F (..\Core\Src\kyber768\api.h)(0x63525949)()
 F (..\Core\Src\kyber768\cbd.c)(0x63525949)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\cbd.o --omf_browse pqclean_vt0\cbd.crf --depend pqclean_vt0\cbd.d)
 I (..\Core\Src\kyber768\cbd.h)(0x63525949)
-I (..\Core\Src\kyber768\params.h)(0x63525949)
+I (..\Core\Src\kyber768\params.h)(0x64BE4600)
 I (..\Core\Src\kyber768\poly.h)(0x63525949)
 I (E:\keil515\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 F (..\Core\Src\kyber768\cbd.h)(0x63525949)()
-F (..\Core\Src\kyber768\indcpa.c)(0x63525949)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\indcpa.o --omf_browse pqclean_vt0\indcpa.crf --depend pqclean_vt0\indcpa.d)
-I (..\Core\Src\kyber768\indcpa.h)(0x63525949)
-I (..\Core\Src\kyber768\params.h)(0x63525949)
+F (..\Core\Src\kyber768\indcpa.c)(0x64C725C1)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\indcpa.o --omf_browse pqclean_vt0\indcpa.crf --depend pqclean_vt0\indcpa.d)
+I (..\Core\Src\kyber768\indcpa.h)(0x64C7213B)
+I (..\Core\Src\kyber768\params.h)(0x64BE4600)
 I (..\Core\Src\kyber768\polyvec.h)(0x63525949)
 I (..\Core\Src\kyber768\poly.h)(0x63525949)
 I (E:\keil515\ARM\ARMCC\include\stdint.h)(0x54C245B8)
@@ -212,10 +216,10 @@ I (..\Core\Src\common\randombytes.h)(0x64AFC0AF)
 I (E:\keil515\ARM\ARMCC\include\stddef.h)(0x54C245B8)
 I (..\Core\Src\kyber768\symmetric.h)(0x63525949)
 I (..\Core\Src\common\fips202.h)(0x63525949)
-F (..\Core\Src\kyber768\indcpa.h)(0x63525949)()
+F (..\Core\Src\kyber768\indcpa.h)(0x64C7213B)()
 F (..\Core\Src\kyber768\kem.c)(0x63525949)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\kem.o --omf_browse pqclean_vt0\kem.crf --depend pqclean_vt0\kem.d)
-I (..\Core\Src\kyber768\indcpa.h)(0x63525949)
-I (..\Core\Src\kyber768\params.h)(0x63525949)
+I (..\Core\Src\kyber768\indcpa.h)(0x64C7213B)
+I (..\Core\Src\kyber768\params.h)(0x64BE4600)
 I (..\Core\Src\kyber768\polyvec.h)(0x63525949)
 I (..\Core\Src\kyber768\poly.h)(0x63525949)
 I (E:\keil515\ARM\ARMCC\include\stdint.h)(0x54C245B8)
@@ -228,14 +232,14 @@ I (..\Core\Src\kyber768\verify.h)(0x63525949)
 F (..\Core\Src\kyber768\kem.h)(0x63525949)()
 F (..\Core\Src\kyber768\ntt.c)(0x63525949)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\ntt.o --omf_browse pqclean_vt0\ntt.crf --depend pqclean_vt0\ntt.d)
 I (..\Core\Src\kyber768\ntt.h)(0x63525949)
-I (..\Core\Src\kyber768\params.h)(0x63525949)
+I (..\Core\Src\kyber768\params.h)(0x64BE4600)
 I (E:\keil515\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\Core\Src\kyber768\reduce.h)(0x63525949)
 F (..\Core\Src\kyber768\ntt.h)(0x63525949)()
-F (..\Core\Src\kyber768\params.h)(0x63525949)()
+F (..\Core\Src\kyber768\params.h)(0x64BE4600)()
 F (..\Core\Src\kyber768\poly.c)(0x63525949)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\poly.o --omf_browse pqclean_vt0\poly.crf --depend pqclean_vt0\poly.d)
 I (..\Core\Src\kyber768\cbd.h)(0x63525949)
-I (..\Core\Src\kyber768\params.h)(0x63525949)
+I (..\Core\Src\kyber768\params.h)(0x64BE4600)
 I (..\Core\Src\kyber768\poly.h)(0x63525949)
 I (E:\keil515\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\Core\Src\kyber768\ntt.h)(0x63525949)
@@ -245,13 +249,13 @@ I (..\Core\Src\common\fips202.h)(0x63525949)
 I (E:\keil515\ARM\ARMCC\include\stddef.h)(0x54C245B8)
 F (..\Core\Src\kyber768\poly.h)(0x63525949)()
 F (..\Core\Src\kyber768\polyvec.c)(0x63525949)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\polyvec.o --omf_browse pqclean_vt0\polyvec.crf --depend pqclean_vt0\polyvec.d)
-I (..\Core\Src\kyber768\params.h)(0x63525949)
+I (..\Core\Src\kyber768\params.h)(0x64BE4600)
 I (..\Core\Src\kyber768\poly.h)(0x63525949)
 I (E:\keil515\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\Core\Src\kyber768\polyvec.h)(0x63525949)
 F (..\Core\Src\kyber768\polyvec.h)(0x63525949)()
 F (..\Core\Src\kyber768\reduce.c)(0x63525949)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\reduce.o --omf_browse pqclean_vt0\reduce.crf --depend pqclean_vt0\reduce.d)
-I (..\Core\Src\kyber768\params.h)(0x63525949)
+I (..\Core\Src\kyber768\params.h)(0x64BE4600)
 I (..\Core\Src\kyber768\reduce.h)(0x63525949)
 I (E:\keil515\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 F (..\Core\Src\kyber768\reduce.h)(0x63525949)()
@@ -260,12 +264,12 @@ F (..\Core\Src\kyber768\symmetric-shake.c)(0x63525949)(--c99 -c --cpu Cortex-M4.
 I (..\Core\Src\common\fips202.h)(0x63525949)
 I (E:\keil515\ARM\ARMCC\include\stddef.h)(0x54C245B8)
 I (E:\keil515\ARM\ARMCC\include\stdint.h)(0x54C245B8)
-I (..\Core\Src\kyber768\params.h)(0x63525949)
+I (..\Core\Src\kyber768\params.h)(0x64BE4600)
 I (..\Core\Src\kyber768\symmetric.h)(0x63525949)
 I (E:\keil515\ARM\ARMCC\include\string.h)(0x54C245B8)
 F (..\Core\Src\kyber768\verify.c)(0x63525949)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src\common -I..\Core\Src\kyber768-I E:\stm32f407_project\pqclean_vt0\MDK-ARM\RTE-I E:\keil515\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-I E:\keil515\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o pqclean_vt0\verify.o --omf_browse pqclean_vt0\verify.crf --depend pqclean_vt0\verify.d)
 I (..\Core\Src\kyber768\verify.h)(0x63525949)
-I (..\Core\Src\kyber768\params.h)(0x63525949)
+I (..\Core\Src\kyber768\params.h)(0x64BE4600)
 I (E:\keil515\ARM\ARMCC\include\stddef.h)(0x54C245B8)
 I (E:\keil515\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 F (..\Core\Src\kyber768\verify.h)(0x63525949)()

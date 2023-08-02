@@ -16,5 +16,9 @@ void PQCLEAN_KYBER768_CLEAN_indcpa_enc(uint8_t c[KYBER_INDCPA_BYTES],
 void PQCLEAN_KYBER768_CLEAN_indcpa_dec(uint8_t m[KYBER_INDCPA_MSGBYTES],
                                        const uint8_t c[KYBER_INDCPA_BYTES],
                                        const uint8_t sk[KYBER_INDCPA_SECRETKEYBYTES]);
-
+																			 
+void PQCLEAN_KYBER768_CLEAN_indcpa_gena(uint8_t aout[KYBER_K*KYBER_K*KYBER_POLYBYTES],
+                                       const uint8_t pk[KYBER_INDCPA_PUBLICKEYBYTES]);
+void PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk(const uint8_t pk[KYBER_INDCPA_PUBLICKEYBYTES],
+																			uint8_t sk[KYBER_INDCPA_SECRETKEYBYTES]);
 #endif

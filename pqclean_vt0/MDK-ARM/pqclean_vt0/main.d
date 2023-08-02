@@ -34,3 +34,7 @@ pqclean_vt0\main.o: ../Core/Inc/rng.h
 pqclean_vt0\main.o: ../Core/Inc/usart.h
 pqclean_vt0\main.o: ../Core/Inc/gpio.h
 pqclean_vt0\main.o: ..\Core\Src\kyber768\api.h
+pqclean_vt0\main.o: ..\Core\Src\kyber768\indcpa.h
+pqclean_vt0\main.o: ..\Core\Src\kyber768\params.h
+pqclean_vt0\main.o: ..\Core\Src\kyber768\polyvec.h
+pqclean_vt0\main.o: ..\Core\Src\kyber768\poly.h

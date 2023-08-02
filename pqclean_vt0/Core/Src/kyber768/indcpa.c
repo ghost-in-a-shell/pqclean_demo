@@ -207,6 +207,7 @@ void PQCLEAN_KYBER768_CLEAN_indcpa_keypair(uint8_t pk[KYBER_INDCPA_PUBLICKEYBYTE
     uint8_t buf[2 * KYBER_SYMBYTES];
     const uint8_t *publicseed = buf;
     const uint8_t *noiseseed = buf + KYBER_SYMBYTES;
+	  //const uint8_t *noiseseed = buf;
     uint8_t nonce = 0;
     polyvec a[KYBER_K], e, pkpv, skpv;
 
@@ -237,6 +238,40 @@ void PQCLEAN_KYBER768_CLEAN_indcpa_keypair(uint8_t pk[KYBER_INDCPA_PUBLICKEYBYTE
     pack_sk(sk, &skpv);
     pack_pk(pk, &pkpv, publicseed);
 }
+				
+
+
+//gena from pk
+void PQCLEAN_KYBER768_CLEAN_indcpa_gena(uint8_t aout[KYBER_K*KYBER_K*KYBER_POLYBYTES],
+                                       const uint8_t pk[KYBER_INDCPA_PUBLICKEYBYTES]) {
+		
+		uint8_t seed[KYBER_SYMBYTES];
+    polyvec pkpv, a[KYBER_K];
+
+    unpack_pk(&pkpv, seed, pk);															 
+		gen_a(a, seed);	
+		for(int i=0;i<KYBER_K;++i){
+			PQCLEAN_KYBER768_CLEAN_polyvec_tobytes(aout+KYBER_K*KYBER_POLYBYTES*i, &a[i]);
+		}
+}
+
+//gen sk from seed
+void PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk(const uint8_t pk[KYBER_INDCPA_PUBLICKEYBYTES],uint8_t sk[KYBER_INDCPA_SECRETKEYBYTES]) {
+		
+		uint8_t seed[KYBER_SYMBYTES];
+    polyvec pkpv, skpv;
+		unsigned int i;
+	
+    unpack_pk(&pkpv, seed, pk);															 
+		uint8_t nonce = 0;
+		for (i = 0; i < KYBER_K; i++) {
+        PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1(&skpv.vec[i], seed, nonce++);
+    }
+		PQCLEAN_KYBER768_CLEAN_polyvec_ntt(&skpv);
+		pack_sk(sk, &skpv);
+}
+
+
 
 /*************************************************
 * Name:        PQCLEAN_KYBER768_CLEAN_indcpa_enc

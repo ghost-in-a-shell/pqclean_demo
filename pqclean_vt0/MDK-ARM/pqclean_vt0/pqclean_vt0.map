@@ -24,6 +24,8 @@ Section Cross References
     main.o(i.SystemClock_Config) refers to stm32f4xx_hal_rcc.o(i.HAL_RCC_ClockConfig) for HAL_RCC_ClockConfig
     main.o(i.generate_and_display_keys) refers to kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair) for PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair
     main.o(i.generate_and_display_keys) refers to printf8.o(i.__0printf$8) for __2printf
+    main.o(i.generate_and_display_keys) refers to indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_gena) for PQCLEAN_KYBER768_CLEAN_indcpa_gena
+    main.o(i.generate_and_display_keys) refers to indcpa.o(i.PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk) for PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk
     main.o(i.generate_and_display_keys) refers to kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_enc) for PQCLEAN_KYBER768_CLEAN_crypto_kem_enc
     main.o(i.generate_and_display_keys) refers to kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_dec) for PQCLEAN_KYBER768_CLEAN_crypto_kem_dec
     main.o(i.main) refers to stm32f4xx_hal.o(i.HAL_Init) for HAL_Init
@@ -51,6 +53,10 @@ Section Cross References
     cbd.o(i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1) refers to cbd.o(i.cbd2) for cbd2
     cbd.o(i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2) refers to cbd.o(i.cbd2) for cbd2
     cbd.o(i.cbd2) refers to cbd.o(i.load32_littleendian) for load32_littleendian
+    indcpa.o(i.PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk) refers to indcpa.o(i.unpack_pk) for unpack_pk
+    indcpa.o(i.PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk) refers to poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1) for PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1
+    indcpa.o(i.PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk) refers to polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_ntt) for PQCLEAN_KYBER768_CLEAN_polyvec_ntt
+    indcpa.o(i.PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk) refers to indcpa.o(i.pack_sk) for pack_sk
     indcpa.o(i.PQCLEAN_KYBER768_CLEAN_gen_matrix) refers to symmetric-shake.o(i.PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb) for PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb
     indcpa.o(i.PQCLEAN_KYBER768_CLEAN_gen_matrix) refers to fips202.o(i.shake128_squeezeblocks) for shake128_squeezeblocks
     indcpa.o(i.PQCLEAN_KYBER768_CLEAN_gen_matrix) refers to indcpa.o(i.rej_uniform) for rej_uniform
@@ -77,6 +83,9 @@ Section Cross References
     indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_enc) refers to polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce) for PQCLEAN_KYBER768_CLEAN_polyvec_reduce
     indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_enc) refers to poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_reduce) for PQCLEAN_KYBER768_CLEAN_poly_reduce
     indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_enc) refers to indcpa.o(i.pack_ciphertext) for pack_ciphertext
+    indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_gena) refers to indcpa.o(i.unpack_pk) for unpack_pk
+    indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_gena) refers to indcpa.o(i.PQCLEAN_KYBER768_CLEAN_gen_matrix) for PQCLEAN_KYBER768_CLEAN_gen_matrix
+    indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_gena) refers to polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes) for PQCLEAN_KYBER768_CLEAN_polyvec_tobytes
     indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair) refers to randombytes.o(i.PQCLEAN_randombytes) for PQCLEAN_randombytes
     indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair) refers to fips202.o(i.sha3_512) for sha3_512
     indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair) refers to indcpa.o(i.PQCLEAN_KYBER768_CLEAN_gen_matrix) for PQCLEAN_KYBER768_CLEAN_gen_matrix
@@ -1309,44 +1318,44 @@ Image Symbol Table
     ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c 0x00000000   Number         0  stm32f4xx_hal_tim.o ABSOLUTE
     ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c 0x00000000   Number         0  stm32f4xx_hal_tim_ex.o ABSOLUTE
     ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c 0x00000000   Number         0  stm32f4xx_hal_uart.o ABSOLUTE
-    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
     ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
@@ -1458,130 +1467,132 @@ Image Symbol Table
     i.MX_USART1_UART_Init                    0x080023e0   Section        0  usart.o(i.MX_USART1_UART_Init)
     i.MemManage_Handler                      0x08002418   Section        0  stm32f4xx_it.o(i.MemManage_Handler)
     i.NMI_Handler                            0x0800241a   Section        0  stm32f4xx_it.o(i.NMI_Handler)
-    i.PQCLEAN_KYBER768_CLEAN_barrett_reduce  0x0800241c   Section        0  reduce.o(i.PQCLEAN_KYBER768_CLEAN_barrett_reduce)
-    i.PQCLEAN_KYBER768_CLEAN_basemul         0x08002436   Section        0  ntt.o(i.PQCLEAN_KYBER768_CLEAN_basemul)
-    i.PQCLEAN_KYBER768_CLEAN_cmov            0x0800248e   Section        0  verify.o(i.PQCLEAN_KYBER768_CLEAN_cmov)
-    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_dec  0x080024ac   Section        0  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_dec)
-    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_enc  0x08002544   Section        0  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_enc)
-    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair 0x080025a2   Section        0  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair)
-    i.PQCLEAN_KYBER768_CLEAN_gen_matrix      0x080025dc   Section        0  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_gen_matrix)
-    i.PQCLEAN_KYBER768_CLEAN_indcpa_dec      0x0800269c   Section        0  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_dec)
-    i.PQCLEAN_KYBER768_CLEAN_indcpa_enc      0x080026fc   Section        0  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_enc)
-    i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair  0x080027fc   Section        0  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair)
-    i.PQCLEAN_KYBER768_CLEAN_invntt          0x080028d4   Section        0  ntt.o(i.PQCLEAN_KYBER768_CLEAN_invntt)
-    i.PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb 0x0800295c   Section        0  symmetric-shake.o(i.PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb)
-    i.PQCLEAN_KYBER768_CLEAN_kyber_shake256_prf 0x08002984   Section        0  symmetric-shake.o(i.PQCLEAN_KYBER768_CLEAN_kyber_shake256_prf)
-    i.PQCLEAN_KYBER768_CLEAN_montgomery_reduce 0x080029ac   Section        0  reduce.o(i.PQCLEAN_KYBER768_CLEAN_montgomery_reduce)
-    i.PQCLEAN_KYBER768_CLEAN_ntt             0x080029c4   Section        0  ntt.o(i.PQCLEAN_KYBER768_CLEAN_ntt)
-    i.PQCLEAN_KYBER768_CLEAN_poly_add        0x08002a20   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_add)
-    i.PQCLEAN_KYBER768_CLEAN_poly_basemul_montgomery 0x08002a3c   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_basemul_montgomery)
-    i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1   0x08002a94   Section        0  cbd.o(i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1)
-    i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2   0x08002a98   Section        0  cbd.o(i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2)
-    i.PQCLEAN_KYBER768_CLEAN_poly_compress   0x08002a9c   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_compress)
-    i.PQCLEAN_KYBER768_CLEAN_poly_decompress 0x08002b10   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_decompress)
-    i.PQCLEAN_KYBER768_CLEAN_poly_frombytes  0x08002b4a   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_frombytes)
-    i.PQCLEAN_KYBER768_CLEAN_poly_frommsg    0x08002b80   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_frommsg)
-    i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1 0x08002bac   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1)
-    i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta2 0x08002bca   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta2)
-    i.PQCLEAN_KYBER768_CLEAN_poly_invntt_tomont 0x08002be8   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_invntt_tomont)
-    i.PQCLEAN_KYBER768_CLEAN_poly_ntt        0x08002bec   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_ntt)
-    i.PQCLEAN_KYBER768_CLEAN_poly_reduce     0x08002c00   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_reduce)
-    i.PQCLEAN_KYBER768_CLEAN_poly_sub        0x08002c1a   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_sub)
-    i.PQCLEAN_KYBER768_CLEAN_poly_tobytes    0x08002c34   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tobytes)
-    i.PQCLEAN_KYBER768_CLEAN_poly_tomont     0x08002c78   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tomont)
-    i.PQCLEAN_KYBER768_CLEAN_poly_tomsg      0x08002c9a   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tomsg)
-    i.PQCLEAN_KYBER768_CLEAN_polyvec_add     0x08002ce6   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_add)
-    i.PQCLEAN_KYBER768_CLEAN_polyvec_basemul_acc_montgomery 0x08002d0c   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_basemul_acc_montgomery)
-    i.PQCLEAN_KYBER768_CLEAN_polyvec_compress 0x08002d4e   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_compress)
-    i.PQCLEAN_KYBER768_CLEAN_polyvec_decompress 0x08002dd8   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_decompress)
-    i.PQCLEAN_KYBER768_CLEAN_polyvec_frombytes 0x08002e4a   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_frombytes)
-    i.PQCLEAN_KYBER768_CLEAN_polyvec_invntt_tomont 0x08002e6a   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_invntt_tomont)
-    i.PQCLEAN_KYBER768_CLEAN_polyvec_ntt     0x08002e80   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_ntt)
-    i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce  0x08002e96   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce)
-    i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes 0x08002eac   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes)
-    i.PQCLEAN_KYBER768_CLEAN_verify          0x08002ecc   Section        0  verify.o(i.PQCLEAN_KYBER768_CLEAN_verify)
-    i.PQCLEAN_randombytes                    0x08002ef0   Section        0  randombytes.o(i.PQCLEAN_randombytes)
-    i.PendSV_Handler                         0x08002f1c   Section        0  stm32f4xx_it.o(i.PendSV_Handler)
-    i.SVC_Handler                            0x08002f1e   Section        0  stm32f4xx_it.o(i.SVC_Handler)
-    i.SysTick_Handler                        0x08002f20   Section        0  stm32f4xx_it.o(i.SysTick_Handler)
-    i.SystemClock_Config                     0x08002f24   Section        0  main.o(i.SystemClock_Config)
-    i.SystemInit                             0x08002fb0   Section        0  system_stm32f4xx.o(i.SystemInit)
-    i.UART_DMAAbortOnError                   0x08002fc0   Section        0  stm32f4xx_hal_uart.o(i.UART_DMAAbortOnError)
-    UART_DMAAbortOnError                     0x08002fc1   Thumb Code    16  stm32f4xx_hal_uart.o(i.UART_DMAAbortOnError)
-    i.UART_EndRxTransfer                     0x08002fd0   Section        0  stm32f4xx_hal_uart.o(i.UART_EndRxTransfer)
-    UART_EndRxTransfer                       0x08002fd1   Thumb Code    78  stm32f4xx_hal_uart.o(i.UART_EndRxTransfer)
-    i.UART_EndTransmit_IT                    0x0800301e   Section        0  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
-    UART_EndTransmit_IT                      0x0800301f   Thumb Code    26  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
-    i.UART_Receive_IT                        0x08003038   Section        0  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
-    UART_Receive_IT                          0x08003039   Thumb Code   198  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
-    i.UART_SetConfig                         0x08003100   Section        0  stm32f4xx_hal_uart.o(i.UART_SetConfig)
-    UART_SetConfig                           0x08003101   Thumb Code   266  stm32f4xx_hal_uart.o(i.UART_SetConfig)
-    i.UART_Transmit_IT                       0x08003214   Section        0  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
-    UART_Transmit_IT                         0x08003215   Thumb Code    94  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
-    i.UART_WaitOnFlagUntilTimeout            0x08003272   Section        0  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
-    UART_WaitOnFlagUntilTimeout              0x08003273   Thumb Code   116  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
-    i.USART1_IRQHandler                      0x080032e8   Section        0  stm32f4xx_it.o(i.USART1_IRQHandler)
-    i.UsageFault_Handler                     0x080032f4   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
-    i.__0printf$8                            0x080032f8   Section        0  printf8.o(i.__0printf$8)
-    i.__NVIC_SetPriority                     0x08003318   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x08003319   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.__scatterload_copy                     0x08003338   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08003346   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08003348   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x08003358   Section        0  printf8.o(i._printf_core)
-    _printf_core                             0x08003359   Thumb Code   996  printf8.o(i._printf_core)
-    i._printf_post_padding                   0x08003768   Section        0  printf8.o(i._printf_post_padding)
-    _printf_post_padding                     0x08003769   Thumb Code    36  printf8.o(i._printf_post_padding)
-    i._printf_pre_padding                    0x0800378c   Section        0  printf8.o(i._printf_pre_padding)
-    _printf_pre_padding                      0x0800378d   Thumb Code    46  printf8.o(i._printf_pre_padding)
-    i.cbd2                                   0x080037ba   Section        0  cbd.o(i.cbd2)
-    cbd2                                     0x080037bb   Thumb Code    84  cbd.o(i.cbd2)
-    i.exit                                   0x08003810   Section        0  aes.o(i.exit)
-    i.fputc                                  0x08003820   Section        0  stm32f4xx_hal.o(i.fputc)
-    i.fqmul                                  0x08003838   Section        0  ntt.o(i.fqmul)
-    fqmul                                    0x08003839   Thumb Code     6  ntt.o(i.fqmul)
-    i.free                                   0x08003840   Section        0  malloc.o(i.free)
-    i.generate_and_display_keys              0x08003890   Section        0  main.o(i.generate_and_display_keys)
-    i.keccak_absorb                          0x080039c8   Section        0  fips202.o(i.keccak_absorb)
-    keccak_absorb                            0x080039c9   Thumb Code   174  fips202.o(i.keccak_absorb)
-    i.keccak_squeezeblocks                   0x08003a76   Section        0  fips202.o(i.keccak_squeezeblocks)
-    keccak_squeezeblocks                     0x08003a77   Thumb Code    58  fips202.o(i.keccak_squeezeblocks)
-    i.load32_littleendian                    0x08003ab0   Section        0  cbd.o(i.load32_littleendian)
-    load32_littleendian                      0x08003ab1   Thumb Code    22  cbd.o(i.load32_littleendian)
-    i.load64                                 0x08003ac6   Section        0  fips202.o(i.load64)
-    load64                                   0x08003ac7   Thumb Code    42  fips202.o(i.load64)
-    i.main                                   0x08003af0   Section        0  main.o(i.main)
-    i.malloc                                 0x08003b20   Section        0  malloc.o(i.malloc)
-    i.pack_ciphertext                        0x08003b8c   Section        0  indcpa.o(i.pack_ciphertext)
-    pack_ciphertext                          0x08003b8d   Thumb Code    26  indcpa.o(i.pack_ciphertext)
-    i.pack_pk                                0x08003ba6   Section        0  indcpa.o(i.pack_pk)
-    pack_pk                                  0x08003ba7   Thumb Code    30  indcpa.o(i.pack_pk)
-    i.pack_sk                                0x08003bc4   Section        0  indcpa.o(i.pack_sk)
-    pack_sk                                  0x08003bc5   Thumb Code     4  indcpa.o(i.pack_sk)
-    i.rej_uniform                            0x08003bc8   Section        0  indcpa.o(i.rej_uniform)
-    rej_uniform                              0x08003bc9   Thumb Code    82  indcpa.o(i.rej_uniform)
-    i.sha3_256                               0x08003c1a   Section        0  fips202.o(i.sha3_256)
-    i.sha3_512                               0x08003c4e   Section        0  fips202.o(i.sha3_512)
-    i.shake128_absorb                        0x08003c82   Section        0  fips202.o(i.shake128_absorb)
-    i.shake128_ctx_release                   0x08003caa   Section        0  fips202.o(i.shake128_ctx_release)
-    i.shake128_squeezeblocks                 0x08003cb0   Section        0  fips202.o(i.shake128_squeezeblocks)
-    i.shake256                               0x08003cb8   Section        0  fips202.o(i.shake256)
-    i.shake256_absorb                        0x08003d14   Section        0  fips202.o(i.shake256_absorb)
-    i.shake256_ctx_release                   0x08003d3c   Section        0  fips202.o(i.shake256_ctx_release)
-    i.shake256_squeezeblocks                 0x08003d42   Section        0  fips202.o(i.shake256_squeezeblocks)
-    i.store64                                0x08003d4a   Section        0  fips202.o(i.store64)
-    store64                                  0x08003d4b   Thumb Code    34  fips202.o(i.store64)
-    i.unpack_ciphertext                      0x08003d6c   Section        0  indcpa.o(i.unpack_ciphertext)
-    unpack_ciphertext                        0x08003d6d   Thumb Code    26  indcpa.o(i.unpack_ciphertext)
-    i.unpack_pk                              0x08003d86   Section        0  indcpa.o(i.unpack_pk)
-    unpack_pk                                0x08003d87   Thumb Code    30  indcpa.o(i.unpack_pk)
-    i.unpack_sk                              0x08003da4   Section        0  indcpa.o(i.unpack_sk)
-    unpack_sk                                0x08003da5   Thumb Code     4  indcpa.o(i.unpack_sk)
-    .constdata                               0x08003da8   Section      256  ntt.o(.constdata)
-    .constdata                               0x08003ea8   Section      192  fips202.o(.constdata)
-    KeccakF_RoundConstants                   0x08003ea8   Data         192  fips202.o(.constdata)
-    .constdata                               0x08003f68   Section       16  system_stm32f4xx.o(.constdata)
-    .constdata                               0x08003f78   Section        8  system_stm32f4xx.o(.constdata)
+    i.PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk 0x0800241c   Section        0  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk)
+    i.PQCLEAN_KYBER768_CLEAN_barrett_reduce  0x08002464   Section        0  reduce.o(i.PQCLEAN_KYBER768_CLEAN_barrett_reduce)
+    i.PQCLEAN_KYBER768_CLEAN_basemul         0x0800247e   Section        0  ntt.o(i.PQCLEAN_KYBER768_CLEAN_basemul)
+    i.PQCLEAN_KYBER768_CLEAN_cmov            0x080024d6   Section        0  verify.o(i.PQCLEAN_KYBER768_CLEAN_cmov)
+    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_dec  0x080024f4   Section        0  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_dec)
+    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_enc  0x0800258c   Section        0  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_enc)
+    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair 0x080025ea   Section        0  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair)
+    i.PQCLEAN_KYBER768_CLEAN_gen_matrix      0x08002624   Section        0  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_gen_matrix)
+    i.PQCLEAN_KYBER768_CLEAN_indcpa_dec      0x080026e4   Section        0  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_dec)
+    i.PQCLEAN_KYBER768_CLEAN_indcpa_enc      0x08002744   Section        0  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_enc)
+    i.PQCLEAN_KYBER768_CLEAN_indcpa_gena     0x08002844   Section        0  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_gena)
+    i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair  0x0800288a   Section        0  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair)
+    i.PQCLEAN_KYBER768_CLEAN_invntt          0x08002960   Section        0  ntt.o(i.PQCLEAN_KYBER768_CLEAN_invntt)
+    i.PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb 0x080029e8   Section        0  symmetric-shake.o(i.PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb)
+    i.PQCLEAN_KYBER768_CLEAN_kyber_shake256_prf 0x08002a10   Section        0  symmetric-shake.o(i.PQCLEAN_KYBER768_CLEAN_kyber_shake256_prf)
+    i.PQCLEAN_KYBER768_CLEAN_montgomery_reduce 0x08002a38   Section        0  reduce.o(i.PQCLEAN_KYBER768_CLEAN_montgomery_reduce)
+    i.PQCLEAN_KYBER768_CLEAN_ntt             0x08002a50   Section        0  ntt.o(i.PQCLEAN_KYBER768_CLEAN_ntt)
+    i.PQCLEAN_KYBER768_CLEAN_poly_add        0x08002aac   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_add)
+    i.PQCLEAN_KYBER768_CLEAN_poly_basemul_montgomery 0x08002ac8   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_basemul_montgomery)
+    i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1   0x08002b20   Section        0  cbd.o(i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1)
+    i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2   0x08002b24   Section        0  cbd.o(i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2)
+    i.PQCLEAN_KYBER768_CLEAN_poly_compress   0x08002b28   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_compress)
+    i.PQCLEAN_KYBER768_CLEAN_poly_decompress 0x08002b9c   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_decompress)
+    i.PQCLEAN_KYBER768_CLEAN_poly_frombytes  0x08002bd6   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_frombytes)
+    i.PQCLEAN_KYBER768_CLEAN_poly_frommsg    0x08002c0c   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_frommsg)
+    i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1 0x08002c38   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1)
+    i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta2 0x08002c56   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta2)
+    i.PQCLEAN_KYBER768_CLEAN_poly_invntt_tomont 0x08002c74   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_invntt_tomont)
+    i.PQCLEAN_KYBER768_CLEAN_poly_ntt        0x08002c78   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_ntt)
+    i.PQCLEAN_KYBER768_CLEAN_poly_reduce     0x08002c8c   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_reduce)
+    i.PQCLEAN_KYBER768_CLEAN_poly_sub        0x08002ca6   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_sub)
+    i.PQCLEAN_KYBER768_CLEAN_poly_tobytes    0x08002cc0   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tobytes)
+    i.PQCLEAN_KYBER768_CLEAN_poly_tomont     0x08002d04   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tomont)
+    i.PQCLEAN_KYBER768_CLEAN_poly_tomsg      0x08002d26   Section        0  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tomsg)
+    i.PQCLEAN_KYBER768_CLEAN_polyvec_add     0x08002d72   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_add)
+    i.PQCLEAN_KYBER768_CLEAN_polyvec_basemul_acc_montgomery 0x08002d98   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_basemul_acc_montgomery)
+    i.PQCLEAN_KYBER768_CLEAN_polyvec_compress 0x08002dda   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_compress)
+    i.PQCLEAN_KYBER768_CLEAN_polyvec_decompress 0x08002e64   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_decompress)
+    i.PQCLEAN_KYBER768_CLEAN_polyvec_frombytes 0x08002ed6   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_frombytes)
+    i.PQCLEAN_KYBER768_CLEAN_polyvec_invntt_tomont 0x08002ef6   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_invntt_tomont)
+    i.PQCLEAN_KYBER768_CLEAN_polyvec_ntt     0x08002f0c   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_ntt)
+    i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce  0x08002f22   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce)
+    i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes 0x08002f38   Section        0  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes)
+    i.PQCLEAN_KYBER768_CLEAN_verify          0x08002f58   Section        0  verify.o(i.PQCLEAN_KYBER768_CLEAN_verify)
+    i.PQCLEAN_randombytes                    0x08002f7c   Section        0  randombytes.o(i.PQCLEAN_randombytes)
+    i.PendSV_Handler                         0x08002fa8   Section        0  stm32f4xx_it.o(i.PendSV_Handler)
+    i.SVC_Handler                            0x08002faa   Section        0  stm32f4xx_it.o(i.SVC_Handler)
+    i.SysTick_Handler                        0x08002fac   Section        0  stm32f4xx_it.o(i.SysTick_Handler)
+    i.SystemClock_Config                     0x08002fb0   Section        0  main.o(i.SystemClock_Config)
+    i.SystemInit                             0x0800303c   Section        0  system_stm32f4xx.o(i.SystemInit)
+    i.UART_DMAAbortOnError                   0x0800304c   Section        0  stm32f4xx_hal_uart.o(i.UART_DMAAbortOnError)
+    UART_DMAAbortOnError                     0x0800304d   Thumb Code    16  stm32f4xx_hal_uart.o(i.UART_DMAAbortOnError)
+    i.UART_EndRxTransfer                     0x0800305c   Section        0  stm32f4xx_hal_uart.o(i.UART_EndRxTransfer)
+    UART_EndRxTransfer                       0x0800305d   Thumb Code    78  stm32f4xx_hal_uart.o(i.UART_EndRxTransfer)
+    i.UART_EndTransmit_IT                    0x080030aa   Section        0  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
+    UART_EndTransmit_IT                      0x080030ab   Thumb Code    26  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
+    i.UART_Receive_IT                        0x080030c4   Section        0  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
+    UART_Receive_IT                          0x080030c5   Thumb Code   198  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
+    i.UART_SetConfig                         0x0800318c   Section        0  stm32f4xx_hal_uart.o(i.UART_SetConfig)
+    UART_SetConfig                           0x0800318d   Thumb Code   266  stm32f4xx_hal_uart.o(i.UART_SetConfig)
+    i.UART_Transmit_IT                       0x080032a0   Section        0  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
+    UART_Transmit_IT                         0x080032a1   Thumb Code    94  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
+    i.UART_WaitOnFlagUntilTimeout            0x080032fe   Section        0  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
+    UART_WaitOnFlagUntilTimeout              0x080032ff   Thumb Code   116  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
+    i.USART1_IRQHandler                      0x08003374   Section        0  stm32f4xx_it.o(i.USART1_IRQHandler)
+    i.UsageFault_Handler                     0x08003380   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
+    i.__0printf$8                            0x08003384   Section        0  printf8.o(i.__0printf$8)
+    i.__NVIC_SetPriority                     0x080033a4   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x080033a5   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.__scatterload_copy                     0x080033c4   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x080033d2   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x080033d4   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x080033e4   Section        0  printf8.o(i._printf_core)
+    _printf_core                             0x080033e5   Thumb Code   996  printf8.o(i._printf_core)
+    i._printf_post_padding                   0x080037f4   Section        0  printf8.o(i._printf_post_padding)
+    _printf_post_padding                     0x080037f5   Thumb Code    36  printf8.o(i._printf_post_padding)
+    i._printf_pre_padding                    0x08003818   Section        0  printf8.o(i._printf_pre_padding)
+    _printf_pre_padding                      0x08003819   Thumb Code    46  printf8.o(i._printf_pre_padding)
+    i.cbd2                                   0x08003846   Section        0  cbd.o(i.cbd2)
+    cbd2                                     0x08003847   Thumb Code    84  cbd.o(i.cbd2)
+    i.exit                                   0x0800389c   Section        0  aes.o(i.exit)
+    i.fputc                                  0x080038ac   Section        0  stm32f4xx_hal.o(i.fputc)
+    i.fqmul                                  0x080038c4   Section        0  ntt.o(i.fqmul)
+    fqmul                                    0x080038c5   Thumb Code     6  ntt.o(i.fqmul)
+    i.free                                   0x080038cc   Section        0  malloc.o(i.free)
+    i.generate_and_display_keys              0x0800391c   Section        0  main.o(i.generate_and_display_keys)
+    i.keccak_absorb                          0x08003adc   Section        0  fips202.o(i.keccak_absorb)
+    keccak_absorb                            0x08003add   Thumb Code   174  fips202.o(i.keccak_absorb)
+    i.keccak_squeezeblocks                   0x08003b8a   Section        0  fips202.o(i.keccak_squeezeblocks)
+    keccak_squeezeblocks                     0x08003b8b   Thumb Code    58  fips202.o(i.keccak_squeezeblocks)
+    i.load32_littleendian                    0x08003bc4   Section        0  cbd.o(i.load32_littleendian)
+    load32_littleendian                      0x08003bc5   Thumb Code    22  cbd.o(i.load32_littleendian)
+    i.load64                                 0x08003bda   Section        0  fips202.o(i.load64)
+    load64                                   0x08003bdb   Thumb Code    42  fips202.o(i.load64)
+    i.main                                   0x08003c04   Section        0  main.o(i.main)
+    i.malloc                                 0x08003c34   Section        0  malloc.o(i.malloc)
+    i.pack_ciphertext                        0x08003ca0   Section        0  indcpa.o(i.pack_ciphertext)
+    pack_ciphertext                          0x08003ca1   Thumb Code    26  indcpa.o(i.pack_ciphertext)
+    i.pack_pk                                0x08003cba   Section        0  indcpa.o(i.pack_pk)
+    pack_pk                                  0x08003cbb   Thumb Code    30  indcpa.o(i.pack_pk)
+    i.pack_sk                                0x08003cd8   Section        0  indcpa.o(i.pack_sk)
+    pack_sk                                  0x08003cd9   Thumb Code     4  indcpa.o(i.pack_sk)
+    i.rej_uniform                            0x08003cdc   Section        0  indcpa.o(i.rej_uniform)
+    rej_uniform                              0x08003cdd   Thumb Code    82  indcpa.o(i.rej_uniform)
+    i.sha3_256                               0x08003d2e   Section        0  fips202.o(i.sha3_256)
+    i.sha3_512                               0x08003d62   Section        0  fips202.o(i.sha3_512)
+    i.shake128_absorb                        0x08003d96   Section        0  fips202.o(i.shake128_absorb)
+    i.shake128_ctx_release                   0x08003dbe   Section        0  fips202.o(i.shake128_ctx_release)
+    i.shake128_squeezeblocks                 0x08003dc4   Section        0  fips202.o(i.shake128_squeezeblocks)
+    i.shake256                               0x08003dcc   Section        0  fips202.o(i.shake256)
+    i.shake256_absorb                        0x08003e28   Section        0  fips202.o(i.shake256_absorb)
+    i.shake256_ctx_release                   0x08003e50   Section        0  fips202.o(i.shake256_ctx_release)
+    i.shake256_squeezeblocks                 0x08003e56   Section        0  fips202.o(i.shake256_squeezeblocks)
+    i.store64                                0x08003e5e   Section        0  fips202.o(i.store64)
+    store64                                  0x08003e5f   Thumb Code    34  fips202.o(i.store64)
+    i.unpack_ciphertext                      0x08003e80   Section        0  indcpa.o(i.unpack_ciphertext)
+    unpack_ciphertext                        0x08003e81   Thumb Code    26  indcpa.o(i.unpack_ciphertext)
+    i.unpack_pk                              0x08003e9a   Section        0  indcpa.o(i.unpack_pk)
+    unpack_pk                                0x08003e9b   Thumb Code    30  indcpa.o(i.unpack_pk)
+    i.unpack_sk                              0x08003eb8   Section        0  indcpa.o(i.unpack_sk)
+    unpack_sk                                0x08003eb9   Thumb Code     4  indcpa.o(i.unpack_sk)
+    .constdata                               0x08003ebc   Section      256  ntt.o(.constdata)
+    .constdata                               0x08003fc0   Section      192  fips202.o(.constdata)
+    KeccakF_RoundConstants                   0x08003fc0   Data         192  fips202.o(.constdata)
+    .constdata                               0x08004080   Section       16  system_stm32f4xx.o(.constdata)
+    .constdata                               0x08004090   Section        8  system_stm32f4xx.o(.constdata)
     .data                                    0x20000000   Section       12  stm32f4xx_hal.o(.data)
     .data                                    0x2000000c   Section        4  system_stm32f4xx.o(.data)
     .data                                    0x20000010   Section        4  stdout.o(.data)
@@ -1792,82 +1803,84 @@ Image Symbol Table
     MX_USART1_UART_Init                      0x080023e1   Thumb Code    48  usart.o(i.MX_USART1_UART_Init)
     MemManage_Handler                        0x08002419   Thumb Code     2  stm32f4xx_it.o(i.MemManage_Handler)
     NMI_Handler                              0x0800241b   Thumb Code     2  stm32f4xx_it.o(i.NMI_Handler)
-    PQCLEAN_KYBER768_CLEAN_barrett_reduce    0x0800241d   Thumb Code    26  reduce.o(i.PQCLEAN_KYBER768_CLEAN_barrett_reduce)
-    PQCLEAN_KYBER768_CLEAN_basemul           0x08002437   Thumb Code    88  ntt.o(i.PQCLEAN_KYBER768_CLEAN_basemul)
-    PQCLEAN_KYBER768_CLEAN_cmov              0x0800248f   Thumb Code    30  verify.o(i.PQCLEAN_KYBER768_CLEAN_cmov)
-    PQCLEAN_KYBER768_CLEAN_crypto_kem_dec    0x080024ad   Thumb Code   152  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_dec)
-    PQCLEAN_KYBER768_CLEAN_crypto_kem_enc    0x08002545   Thumb Code    94  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_enc)
-    PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair 0x080025a3   Thumb Code    58  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair)
-    PQCLEAN_KYBER768_CLEAN_gen_matrix        0x080025dd   Thumb Code   192  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_gen_matrix)
-    PQCLEAN_KYBER768_CLEAN_indcpa_dec        0x0800269d   Thumb Code    96  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_dec)
-    PQCLEAN_KYBER768_CLEAN_indcpa_enc        0x080026fd   Thumb Code   256  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_enc)
-    PQCLEAN_KYBER768_CLEAN_indcpa_keypair    0x080027fd   Thumb Code   214  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair)
-    PQCLEAN_KYBER768_CLEAN_invntt            0x080028d5   Thumb Code   130  ntt.o(i.PQCLEAN_KYBER768_CLEAN_invntt)
-    PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb 0x0800295d   Thumb Code    40  symmetric-shake.o(i.PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb)
-    PQCLEAN_KYBER768_CLEAN_kyber_shake256_prf 0x08002985   Thumb Code    40  symmetric-shake.o(i.PQCLEAN_KYBER768_CLEAN_kyber_shake256_prf)
-    PQCLEAN_KYBER768_CLEAN_montgomery_reduce 0x080029ad   Thumb Code    22  reduce.o(i.PQCLEAN_KYBER768_CLEAN_montgomery_reduce)
-    PQCLEAN_KYBER768_CLEAN_ntt               0x080029c5   Thumb Code    86  ntt.o(i.PQCLEAN_KYBER768_CLEAN_ntt)
-    PQCLEAN_KYBER768_CLEAN_poly_add          0x08002a21   Thumb Code    26  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_add)
-    PQCLEAN_KYBER768_CLEAN_poly_basemul_montgomery 0x08002a3d   Thumb Code    84  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_basemul_montgomery)
-    PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1     0x08002a95   Thumb Code     4  cbd.o(i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1)
-    PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2     0x08002a99   Thumb Code     4  cbd.o(i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2)
-    PQCLEAN_KYBER768_CLEAN_poly_compress     0x08002a9d   Thumb Code   116  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_compress)
-    PQCLEAN_KYBER768_CLEAN_poly_decompress   0x08002b11   Thumb Code    58  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_decompress)
-    PQCLEAN_KYBER768_CLEAN_poly_frombytes    0x08002b4b   Thumb Code    54  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_frombytes)
-    PQCLEAN_KYBER768_CLEAN_poly_frommsg      0x08002b81   Thumb Code    44  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_frommsg)
-    PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1 0x08002bad   Thumb Code    30  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1)
-    PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta2 0x08002bcb   Thumb Code    30  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta2)
-    PQCLEAN_KYBER768_CLEAN_poly_invntt_tomont 0x08002be9   Thumb Code     4  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_invntt_tomont)
-    PQCLEAN_KYBER768_CLEAN_poly_ntt          0x08002bed   Thumb Code    20  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_ntt)
-    PQCLEAN_KYBER768_CLEAN_poly_reduce       0x08002c01   Thumb Code    26  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_reduce)
-    PQCLEAN_KYBER768_CLEAN_poly_sub          0x08002c1b   Thumb Code    26  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_sub)
-    PQCLEAN_KYBER768_CLEAN_poly_tobytes      0x08002c35   Thumb Code    68  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tobytes)
-    PQCLEAN_KYBER768_CLEAN_poly_tomont       0x08002c79   Thumb Code    34  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tomont)
-    PQCLEAN_KYBER768_CLEAN_poly_tomsg        0x08002c9b   Thumb Code    76  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tomsg)
-    PQCLEAN_KYBER768_CLEAN_polyvec_add       0x08002ce7   Thumb Code    38  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_add)
-    PQCLEAN_KYBER768_CLEAN_polyvec_basemul_acc_montgomery 0x08002d0d   Thumb Code    66  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_basemul_acc_montgomery)
-    PQCLEAN_KYBER768_CLEAN_polyvec_compress  0x08002d4f   Thumb Code   138  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_compress)
-    PQCLEAN_KYBER768_CLEAN_polyvec_decompress 0x08002dd9   Thumb Code   114  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_decompress)
-    PQCLEAN_KYBER768_CLEAN_polyvec_frombytes 0x08002e4b   Thumb Code    32  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_frombytes)
-    PQCLEAN_KYBER768_CLEAN_polyvec_invntt_tomont 0x08002e6b   Thumb Code    22  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_invntt_tomont)
-    PQCLEAN_KYBER768_CLEAN_polyvec_ntt       0x08002e81   Thumb Code    22  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_ntt)
-    PQCLEAN_KYBER768_CLEAN_polyvec_reduce    0x08002e97   Thumb Code    22  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce)
-    PQCLEAN_KYBER768_CLEAN_polyvec_tobytes   0x08002ead   Thumb Code    32  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes)
-    PQCLEAN_KYBER768_CLEAN_verify            0x08002ecd   Thumb Code    36  verify.o(i.PQCLEAN_KYBER768_CLEAN_verify)
-    PQCLEAN_randombytes                      0x08002ef1   Thumb Code    40  randombytes.o(i.PQCLEAN_randombytes)
-    PendSV_Handler                           0x08002f1d   Thumb Code     2  stm32f4xx_it.o(i.PendSV_Handler)
-    SVC_Handler                              0x08002f1f   Thumb Code     2  stm32f4xx_it.o(i.SVC_Handler)
-    SysTick_Handler                          0x08002f21   Thumb Code     4  stm32f4xx_it.o(i.SysTick_Handler)
-    SystemClock_Config                       0x08002f25   Thumb Code   130  main.o(i.SystemClock_Config)
-    SystemInit                               0x08002fb1   Thumb Code    12  system_stm32f4xx.o(i.SystemInit)
-    USART1_IRQHandler                        0x080032e9   Thumb Code     6  stm32f4xx_it.o(i.USART1_IRQHandler)
-    UsageFault_Handler                       0x080032f5   Thumb Code     2  stm32f4xx_it.o(i.UsageFault_Handler)
-    __0printf$8                              0x080032f9   Thumb Code    22  printf8.o(i.__0printf$8)
-    __1printf$8                              0x080032f9   Thumb Code     0  printf8.o(i.__0printf$8)
-    __2printf                                0x080032f9   Thumb Code     0  printf8.o(i.__0printf$8)
-    __scatterload_copy                       0x08003339   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08003347   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08003349   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    exit                                     0x08003811   Thumb Code     8  aes.o(i.exit)
-    fputc                                    0x08003821   Thumb Code    20  stm32f4xx_hal.o(i.fputc)
-    free                                     0x08003841   Thumb Code    76  malloc.o(i.free)
-    generate_and_display_keys                0x08003891   Thumb Code   218  main.o(i.generate_and_display_keys)
-    main                                     0x08003af1   Thumb Code    32  main.o(i.main)
-    malloc                                   0x08003b21   Thumb Code    92  malloc.o(i.malloc)
-    sha3_256                                 0x08003c1b   Thumb Code    52  fips202.o(i.sha3_256)
-    sha3_512                                 0x08003c4f   Thumb Code    52  fips202.o(i.sha3_512)
-    shake128_absorb                          0x08003c83   Thumb Code    40  fips202.o(i.shake128_absorb)
-    shake128_ctx_release                     0x08003cab   Thumb Code     6  fips202.o(i.shake128_ctx_release)
-    shake128_squeezeblocks                   0x08003cb1   Thumb Code     8  fips202.o(i.shake128_squeezeblocks)
-    shake256                                 0x08003cb9   Thumb Code    92  fips202.o(i.shake256)
-    shake256_absorb                          0x08003d15   Thumb Code    40  fips202.o(i.shake256_absorb)
-    shake256_ctx_release                     0x08003d3d   Thumb Code     6  fips202.o(i.shake256_ctx_release)
-    shake256_squeezeblocks                   0x08003d43   Thumb Code     8  fips202.o(i.shake256_squeezeblocks)
-    PQCLEAN_KYBER768_CLEAN_zetas             0x08003da8   Data         256  ntt.o(.constdata)
-    AHBPrescTable                            0x08003f68   Data          16  system_stm32f4xx.o(.constdata)
-    APBPrescTable                            0x08003f78   Data           8  system_stm32f4xx.o(.constdata)
-    Region$$Table$$Base                      0x08003f80   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003fa0   Number         0  anon$$obj.o(Region$$Table)
+    PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk 0x0800241d   Thumb Code    72  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk)
+    PQCLEAN_KYBER768_CLEAN_barrett_reduce    0x08002465   Thumb Code    26  reduce.o(i.PQCLEAN_KYBER768_CLEAN_barrett_reduce)
+    PQCLEAN_KYBER768_CLEAN_basemul           0x0800247f   Thumb Code    88  ntt.o(i.PQCLEAN_KYBER768_CLEAN_basemul)
+    PQCLEAN_KYBER768_CLEAN_cmov              0x080024d7   Thumb Code    30  verify.o(i.PQCLEAN_KYBER768_CLEAN_cmov)
+    PQCLEAN_KYBER768_CLEAN_crypto_kem_dec    0x080024f5   Thumb Code   152  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_dec)
+    PQCLEAN_KYBER768_CLEAN_crypto_kem_enc    0x0800258d   Thumb Code    94  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_enc)
+    PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair 0x080025eb   Thumb Code    58  kem.o(i.PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair)
+    PQCLEAN_KYBER768_CLEAN_gen_matrix        0x08002625   Thumb Code   192  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_gen_matrix)
+    PQCLEAN_KYBER768_CLEAN_indcpa_dec        0x080026e5   Thumb Code    96  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_dec)
+    PQCLEAN_KYBER768_CLEAN_indcpa_enc        0x08002745   Thumb Code   256  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_enc)
+    PQCLEAN_KYBER768_CLEAN_indcpa_gena       0x08002845   Thumb Code    70  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_gena)
+    PQCLEAN_KYBER768_CLEAN_indcpa_keypair    0x0800288b   Thumb Code   214  indcpa.o(i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair)
+    PQCLEAN_KYBER768_CLEAN_invntt            0x08002961   Thumb Code   130  ntt.o(i.PQCLEAN_KYBER768_CLEAN_invntt)
+    PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb 0x080029e9   Thumb Code    40  symmetric-shake.o(i.PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb)
+    PQCLEAN_KYBER768_CLEAN_kyber_shake256_prf 0x08002a11   Thumb Code    40  symmetric-shake.o(i.PQCLEAN_KYBER768_CLEAN_kyber_shake256_prf)
+    PQCLEAN_KYBER768_CLEAN_montgomery_reduce 0x08002a39   Thumb Code    22  reduce.o(i.PQCLEAN_KYBER768_CLEAN_montgomery_reduce)
+    PQCLEAN_KYBER768_CLEAN_ntt               0x08002a51   Thumb Code    86  ntt.o(i.PQCLEAN_KYBER768_CLEAN_ntt)
+    PQCLEAN_KYBER768_CLEAN_poly_add          0x08002aad   Thumb Code    26  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_add)
+    PQCLEAN_KYBER768_CLEAN_poly_basemul_montgomery 0x08002ac9   Thumb Code    84  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_basemul_montgomery)
+    PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1     0x08002b21   Thumb Code     4  cbd.o(i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1)
+    PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2     0x08002b25   Thumb Code     4  cbd.o(i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2)
+    PQCLEAN_KYBER768_CLEAN_poly_compress     0x08002b29   Thumb Code   116  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_compress)
+    PQCLEAN_KYBER768_CLEAN_poly_decompress   0x08002b9d   Thumb Code    58  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_decompress)
+    PQCLEAN_KYBER768_CLEAN_poly_frombytes    0x08002bd7   Thumb Code    54  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_frombytes)
+    PQCLEAN_KYBER768_CLEAN_poly_frommsg      0x08002c0d   Thumb Code    44  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_frommsg)
+    PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1 0x08002c39   Thumb Code    30  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1)
+    PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta2 0x08002c57   Thumb Code    30  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta2)
+    PQCLEAN_KYBER768_CLEAN_poly_invntt_tomont 0x08002c75   Thumb Code     4  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_invntt_tomont)
+    PQCLEAN_KYBER768_CLEAN_poly_ntt          0x08002c79   Thumb Code    20  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_ntt)
+    PQCLEAN_KYBER768_CLEAN_poly_reduce       0x08002c8d   Thumb Code    26  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_reduce)
+    PQCLEAN_KYBER768_CLEAN_poly_sub          0x08002ca7   Thumb Code    26  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_sub)
+    PQCLEAN_KYBER768_CLEAN_poly_tobytes      0x08002cc1   Thumb Code    68  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tobytes)
+    PQCLEAN_KYBER768_CLEAN_poly_tomont       0x08002d05   Thumb Code    34  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tomont)
+    PQCLEAN_KYBER768_CLEAN_poly_tomsg        0x08002d27   Thumb Code    76  poly.o(i.PQCLEAN_KYBER768_CLEAN_poly_tomsg)
+    PQCLEAN_KYBER768_CLEAN_polyvec_add       0x08002d73   Thumb Code    38  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_add)
+    PQCLEAN_KYBER768_CLEAN_polyvec_basemul_acc_montgomery 0x08002d99   Thumb Code    66  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_basemul_acc_montgomery)
+    PQCLEAN_KYBER768_CLEAN_polyvec_compress  0x08002ddb   Thumb Code   138  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_compress)
+    PQCLEAN_KYBER768_CLEAN_polyvec_decompress 0x08002e65   Thumb Code   114  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_decompress)
+    PQCLEAN_KYBER768_CLEAN_polyvec_frombytes 0x08002ed7   Thumb Code    32  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_frombytes)
+    PQCLEAN_KYBER768_CLEAN_polyvec_invntt_tomont 0x08002ef7   Thumb Code    22  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_invntt_tomont)
+    PQCLEAN_KYBER768_CLEAN_polyvec_ntt       0x08002f0d   Thumb Code    22  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_ntt)
+    PQCLEAN_KYBER768_CLEAN_polyvec_reduce    0x08002f23   Thumb Code    22  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce)
+    PQCLEAN_KYBER768_CLEAN_polyvec_tobytes   0x08002f39   Thumb Code    32  polyvec.o(i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes)
+    PQCLEAN_KYBER768_CLEAN_verify            0x08002f59   Thumb Code    36  verify.o(i.PQCLEAN_KYBER768_CLEAN_verify)
+    PQCLEAN_randombytes                      0x08002f7d   Thumb Code    40  randombytes.o(i.PQCLEAN_randombytes)
+    PendSV_Handler                           0x08002fa9   Thumb Code     2  stm32f4xx_it.o(i.PendSV_Handler)
+    SVC_Handler                              0x08002fab   Thumb Code     2  stm32f4xx_it.o(i.SVC_Handler)
+    SysTick_Handler                          0x08002fad   Thumb Code     4  stm32f4xx_it.o(i.SysTick_Handler)
+    SystemClock_Config                       0x08002fb1   Thumb Code   130  main.o(i.SystemClock_Config)
+    SystemInit                               0x0800303d   Thumb Code    12  system_stm32f4xx.o(i.SystemInit)
+    USART1_IRQHandler                        0x08003375   Thumb Code     6  stm32f4xx_it.o(i.USART1_IRQHandler)
+    UsageFault_Handler                       0x08003381   Thumb Code     2  stm32f4xx_it.o(i.UsageFault_Handler)
+    __0printf$8                              0x08003385   Thumb Code    22  printf8.o(i.__0printf$8)
+    __1printf$8                              0x08003385   Thumb Code     0  printf8.o(i.__0printf$8)
+    __2printf                                0x08003385   Thumb Code     0  printf8.o(i.__0printf$8)
+    __scatterload_copy                       0x080033c5   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x080033d3   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x080033d5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    exit                                     0x0800389d   Thumb Code     8  aes.o(i.exit)
+    fputc                                    0x080038ad   Thumb Code    20  stm32f4xx_hal.o(i.fputc)
+    free                                     0x080038cd   Thumb Code    76  malloc.o(i.free)
+    generate_and_display_keys                0x0800391d   Thumb Code   320  main.o(i.generate_and_display_keys)
+    main                                     0x08003c05   Thumb Code    32  main.o(i.main)
+    malloc                                   0x08003c35   Thumb Code    92  malloc.o(i.malloc)
+    sha3_256                                 0x08003d2f   Thumb Code    52  fips202.o(i.sha3_256)
+    sha3_512                                 0x08003d63   Thumb Code    52  fips202.o(i.sha3_512)
+    shake128_absorb                          0x08003d97   Thumb Code    40  fips202.o(i.shake128_absorb)
+    shake128_ctx_release                     0x08003dbf   Thumb Code     6  fips202.o(i.shake128_ctx_release)
+    shake128_squeezeblocks                   0x08003dc5   Thumb Code     8  fips202.o(i.shake128_squeezeblocks)
+    shake256                                 0x08003dcd   Thumb Code    92  fips202.o(i.shake256)
+    shake256_absorb                          0x08003e29   Thumb Code    40  fips202.o(i.shake256_absorb)
+    shake256_ctx_release                     0x08003e51   Thumb Code     6  fips202.o(i.shake256_ctx_release)
+    shake256_squeezeblocks                   0x08003e57   Thumb Code     8  fips202.o(i.shake256_squeezeblocks)
+    PQCLEAN_KYBER768_CLEAN_zetas             0x08003ebc   Data         256  ntt.o(.constdata)
+    AHBPrescTable                            0x08004080   Data          16  system_stm32f4xx.o(.constdata)
+    APBPrescTable                            0x08004090   Data           8  system_stm32f4xx.o(.constdata)
+    Region$$Table$$Base                      0x08004098   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080040b8   Number         0  anon$$obj.o(Region$$Table)
     uwTickFreq                               0x20000000   Data           1  stm32f4xx_hal.o(.data)
     uwTickPrio                               0x20000004   Data           4  stm32f4xx_hal.o(.data)
     uwTick                                   0x20000008   Data           4  stm32f4xx_hal.o(.data)
@@ -1889,197 +1902,199 @@ Memory Map of the image
 
   Image Entry point : 0x0800019d
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00003fbc, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x000040d4, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x08000000, Size: 0x00003fa0, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x08000000, Size: 0x000040b8, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x00000188   Data   RO            3    RESET               startup_stm32f407xx.o
-    0x08000188   0x00000000   Code   RO         3350  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000188   0x00000004   Code   RO         3654    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x0800018c   0x00000004   Code   RO         3657    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000190   0x00000000   Code   RO         3659    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000190   0x00000000   Code   RO         3661    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000190   0x00000008   Code   RO         3662    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000198   0x00000000   Code   RO         3664    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000198   0x00000000   Code   RO         3666    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000198   0x00000004   Code   RO         3655    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000188   0x00000000   Code   RO         3362  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000188   0x00000004   Code   RO         3666    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x0800018c   0x00000004   Code   RO         3669    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000190   0x00000000   Code   RO         3671    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000190   0x00000000   Code   RO         3673    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000190   0x00000008   Code   RO         3674    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000198   0x00000000   Code   RO         3676    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000198   0x00000000   Code   RO         3678    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000198   0x00000004   Code   RO         3667    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x0800019c   0x00000024   Code   RO            4  * .text               startup_stm32f407xx.o
-    0x080001c0   0x00000062   Code   RO         3353    .text               mc_w.l(uldiv.o)
-    0x08000222   0x0000001e   Code   RO         3355    .text               mc_w.l(llshl.o)
-    0x08000240   0x00000020   Code   RO         3357    .text               mc_w.l(llushr.o)
-    0x08000260   0x00000024   Code   RO         3359    .text               mc_w.l(memcpya.o)
-    0x08000284   0x00000024   Code   RO         3361    .text               mc_w.l(memseta.o)
-    0x080002a8   0x00000024   Code   RO         3684    .text               mc_w.l(init.o)
-    0x080002cc   0x00000002   Code   RO          271    i.BusFault_Handler  stm32f4xx_it.o
-    0x080002ce   0x00000002   Code   RO          272    i.DebugMon_Handler  stm32f4xx_it.o
+    0x080001c0   0x00000062   Code   RO         3365    .text               mc_w.l(uldiv.o)
+    0x08000222   0x0000001e   Code   RO         3367    .text               mc_w.l(llshl.o)
+    0x08000240   0x00000020   Code   RO         3369    .text               mc_w.l(llushr.o)
+    0x08000260   0x00000024   Code   RO         3371    .text               mc_w.l(memcpya.o)
+    0x08000284   0x00000024   Code   RO         3373    .text               mc_w.l(memseta.o)
+    0x080002a8   0x00000024   Code   RO         3696    .text               mc_w.l(init.o)
+    0x080002cc   0x00000002   Code   RO          283    i.BusFault_Handler  stm32f4xx_it.o
+    0x080002ce   0x00000002   Code   RO          284    i.DebugMon_Handler  stm32f4xx_it.o
     0x080002d0   0x00000004   Code   RO           13    i.Error_Handler     main.o
-    0x080002d4   0x0000008e   Code   RO         2225    i.HAL_DMA_Abort     stm32f4xx_hal_dma.o
-    0x08000362   0x00000024   Code   RO         2226    i.HAL_DMA_Abort_IT  stm32f4xx_hal_dma.o
+    0x080002d4   0x0000008e   Code   RO         2237    i.HAL_DMA_Abort     stm32f4xx_hal_dma.o
+    0x08000362   0x00000024   Code   RO         2238    i.HAL_DMA_Abort_IT  stm32f4xx_hal_dma.o
     0x08000386   0x00000002   PAD
-    0x08000388   0x000001d0   Code   RO         2118    i.HAL_GPIO_Init     stm32f4xx_hal_gpio.o
-    0x08000558   0x0000000c   Code   RO         2650    i.HAL_GetTick       stm32f4xx_hal.o
-    0x08000564   0x00000010   Code   RO         2656    i.HAL_IncTick       stm32f4xx_hal.o
-    0x08000574   0x00000034   Code   RO         2657    i.HAL_Init          stm32f4xx_hal.o
-    0x080005a8   0x00000044   Code   RO         2658    i.HAL_InitTick      stm32f4xx_hal.o
-    0x080005ec   0x00000030   Code   RO          353    i.HAL_MspInit       stm32f4xx_hal_msp.o
-    0x0800061c   0x0000001a   Code   RO         2507    i.HAL_NVIC_EnableIRQ  stm32f4xx_hal_cortex.o
+    0x08000388   0x000001d0   Code   RO         2130    i.HAL_GPIO_Init     stm32f4xx_hal_gpio.o
+    0x08000558   0x0000000c   Code   RO         2662    i.HAL_GetTick       stm32f4xx_hal.o
+    0x08000564   0x00000010   Code   RO         2668    i.HAL_IncTick       stm32f4xx_hal.o
+    0x08000574   0x00000034   Code   RO         2669    i.HAL_Init          stm32f4xx_hal.o
+    0x080005a8   0x00000044   Code   RO         2670    i.HAL_InitTick      stm32f4xx_hal.o
+    0x080005ec   0x00000030   Code   RO          365    i.HAL_MspInit       stm32f4xx_hal_msp.o
+    0x0800061c   0x0000001a   Code   RO         2519    i.HAL_NVIC_EnableIRQ  stm32f4xx_hal_cortex.o
     0x08000636   0x00000002   PAD
-    0x08000638   0x00000040   Code   RO         2513    i.HAL_NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x08000678   0x00000024   Code   RO         2514    i.HAL_NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x0800069c   0x0000014c   Code   RO         1719    i.HAL_RCC_ClockConfig  stm32f4xx_hal_rcc.o
-    0x080007e8   0x0000000c   Code   RO         1724    i.HAL_RCC_GetHCLKFreq  stm32f4xx_hal_rcc.o
-    0x080007f4   0x00000020   Code   RO         1726    i.HAL_RCC_GetPCLK1Freq  stm32f4xx_hal_rcc.o
-    0x08000814   0x00000020   Code   RO         1727    i.HAL_RCC_GetPCLK2Freq  stm32f4xx_hal_rcc.o
-    0x08000834   0x0000006c   Code   RO         1728    i.HAL_RCC_GetSysClockFreq  stm32f4xx_hal_rcc.o
-    0x080008a0   0x000003c0   Code   RO         1731    i.HAL_RCC_OscConfig  stm32f4xx_hal_rcc.o
-    0x08000c60   0x0000007c   Code   RO         1618    i.HAL_RNG_GenerateRandomNumber  stm32f4xx_hal_rng.o
-    0x08000cdc   0x00000034   Code   RO         1625    i.HAL_RNG_Init      stm32f4xx_hal_rng.o
-    0x08000d10   0x00000028   Code   RO          188    i.HAL_RNG_MspInit   rng.o
-    0x08000d38   0x00000028   Code   RO         2518    i.HAL_SYSTICK_Config  stm32f4xx_hal_cortex.o
-    0x08000d60   0x00000002   Code   RO         2959    i.HAL_UARTEx_RxEventCallback  stm32f4xx_hal_uart.o
-    0x08000d62   0x00000002   Code   RO         2973    i.HAL_UART_ErrorCallback  stm32f4xx_hal_uart.o
-    0x08000d64   0x00000228   Code   RO         2976    i.HAL_UART_IRQHandler  stm32f4xx_hal_uart.o
-    0x08000f8c   0x00000064   Code   RO         2977    i.HAL_UART_Init     stm32f4xx_hal_uart.o
-    0x08000ff0   0x0000007c   Code   RO          230    i.HAL_UART_MspInit  usart.o
-    0x0800106c   0x00000002   Code   RO         2983    i.HAL_UART_RxCpltCallback  stm32f4xx_hal_uart.o
-    0x0800106e   0x000000be   Code   RO         2985    i.HAL_UART_Transmit  stm32f4xx_hal_uart.o
-    0x0800112c   0x00000002   Code   RO         2988    i.HAL_UART_TxCpltCallback  stm32f4xx_hal_uart.o
-    0x0800112e   0x00000002   Code   RO          273    i.HardFault_Handler  stm32f4xx_it.o
-    0x08001130   0x00001260   Code   RO          984    i.KeccakF1600_StatePermute  fips202.o
-    0x08002390   0x0000002c   Code   RO          163    i.MX_GPIO_Init      gpio.o
-    0x080023bc   0x00000024   Code   RO          189    i.MX_RNG_Init       rng.o
-    0x080023e0   0x00000038   Code   RO          231    i.MX_USART1_UART_Init  usart.o
-    0x08002418   0x00000002   Code   RO          274    i.MemManage_Handler  stm32f4xx_it.o
-    0x0800241a   0x00000002   Code   RO          275    i.NMI_Handler       stm32f4xx_it.o
-    0x0800241c   0x0000001a   Code   RO          719    i.PQCLEAN_KYBER768_CLEAN_barrett_reduce  reduce.o
-    0x08002436   0x00000058   Code   RO          525    i.PQCLEAN_KYBER768_CLEAN_basemul  ntt.o
-    0x0800248e   0x0000001e   Code   RO          758    i.PQCLEAN_KYBER768_CLEAN_cmov  verify.o
-    0x080024ac   0x00000098   Code   RO          495    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_dec  kem.o
-    0x08002544   0x0000005e   Code   RO          496    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_enc  kem.o
-    0x080025a2   0x0000003a   Code   RO          497    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair  kem.o
-    0x080025dc   0x000000c0   Code   RO          411    i.PQCLEAN_KYBER768_CLEAN_gen_matrix  indcpa.o
-    0x0800269c   0x00000060   Code   RO          412    i.PQCLEAN_KYBER768_CLEAN_indcpa_dec  indcpa.o
-    0x080026fc   0x00000100   Code   RO          413    i.PQCLEAN_KYBER768_CLEAN_indcpa_enc  indcpa.o
-    0x080027fc   0x000000d6   Code   RO          414    i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair  indcpa.o
-    0x080028d2   0x00000002   PAD
-    0x080028d4   0x00000088   Code   RO          526    i.PQCLEAN_KYBER768_CLEAN_invntt  ntt.o
-    0x0800295c   0x00000028   Code   RO          737    i.PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb  symmetric-shake.o
-    0x08002984   0x00000028   Code   RO          738    i.PQCLEAN_KYBER768_CLEAN_kyber_shake256_prf  symmetric-shake.o
-    0x080029ac   0x00000016   Code   RO          720    i.PQCLEAN_KYBER768_CLEAN_montgomery_reduce  reduce.o
-    0x080029c2   0x00000002   PAD
-    0x080029c4   0x0000005c   Code   RO          527    i.PQCLEAN_KYBER768_CLEAN_ntt  ntt.o
-    0x08002a20   0x0000001a   Code   RO          563    i.PQCLEAN_KYBER768_CLEAN_poly_add  poly.o
-    0x08002a3a   0x00000002   PAD
-    0x08002a3c   0x00000058   Code   RO          564    i.PQCLEAN_KYBER768_CLEAN_poly_basemul_montgomery  poly.o
-    0x08002a94   0x00000004   Code   RO          374    i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1  cbd.o
-    0x08002a98   0x00000004   Code   RO          375    i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2  cbd.o
-    0x08002a9c   0x00000074   Code   RO          565    i.PQCLEAN_KYBER768_CLEAN_poly_compress  poly.o
-    0x08002b10   0x0000003a   Code   RO          566    i.PQCLEAN_KYBER768_CLEAN_poly_decompress  poly.o
-    0x08002b4a   0x00000036   Code   RO          567    i.PQCLEAN_KYBER768_CLEAN_poly_frombytes  poly.o
-    0x08002b80   0x0000002c   Code   RO          568    i.PQCLEAN_KYBER768_CLEAN_poly_frommsg  poly.o
-    0x08002bac   0x0000001e   Code   RO          569    i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1  poly.o
-    0x08002bca   0x0000001e   Code   RO          570    i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta2  poly.o
-    0x08002be8   0x00000004   Code   RO          571    i.PQCLEAN_KYBER768_CLEAN_poly_invntt_tomont  poly.o
-    0x08002bec   0x00000014   Code   RO          572    i.PQCLEAN_KYBER768_CLEAN_poly_ntt  poly.o
-    0x08002c00   0x0000001a   Code   RO          573    i.PQCLEAN_KYBER768_CLEAN_poly_reduce  poly.o
-    0x08002c1a   0x0000001a   Code   RO          574    i.PQCLEAN_KYBER768_CLEAN_poly_sub  poly.o
-    0x08002c34   0x00000044   Code   RO          575    i.PQCLEAN_KYBER768_CLEAN_poly_tobytes  poly.o
-    0x08002c78   0x00000022   Code   RO          576    i.PQCLEAN_KYBER768_CLEAN_poly_tomont  poly.o
-    0x08002c9a   0x0000004c   Code   RO          577    i.PQCLEAN_KYBER768_CLEAN_poly_tomsg  poly.o
-    0x08002ce6   0x00000026   Code   RO          659    i.PQCLEAN_KYBER768_CLEAN_polyvec_add  polyvec.o
-    0x08002d0c   0x00000042   Code   RO          660    i.PQCLEAN_KYBER768_CLEAN_polyvec_basemul_acc_montgomery  polyvec.o
-    0x08002d4e   0x0000008a   Code   RO          661    i.PQCLEAN_KYBER768_CLEAN_polyvec_compress  polyvec.o
-    0x08002dd8   0x00000072   Code   RO          662    i.PQCLEAN_KYBER768_CLEAN_polyvec_decompress  polyvec.o
-    0x08002e4a   0x00000020   Code   RO          663    i.PQCLEAN_KYBER768_CLEAN_polyvec_frombytes  polyvec.o
-    0x08002e6a   0x00000016   Code   RO          664    i.PQCLEAN_KYBER768_CLEAN_polyvec_invntt_tomont  polyvec.o
-    0x08002e80   0x00000016   Code   RO          665    i.PQCLEAN_KYBER768_CLEAN_polyvec_ntt  polyvec.o
-    0x08002e96   0x00000016   Code   RO          666    i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce  polyvec.o
-    0x08002eac   0x00000020   Code   RO          667    i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes  polyvec.o
-    0x08002ecc   0x00000024   Code   RO          759    i.PQCLEAN_KYBER768_CLEAN_verify  verify.o
-    0x08002ef0   0x0000002c   Code   RO         1309    i.PQCLEAN_randombytes  randombytes.o
-    0x08002f1c   0x00000002   Code   RO          276    i.PendSV_Handler    stm32f4xx_it.o
-    0x08002f1e   0x00000002   Code   RO          277    i.SVC_Handler       stm32f4xx_it.o
-    0x08002f20   0x00000004   Code   RO          278    i.SysTick_Handler   stm32f4xx_it.o
-    0x08002f24   0x0000008c   Code   RO           14    i.SystemClock_Config  main.o
-    0x08002fb0   0x00000010   Code   RO         3316    i.SystemInit        system_stm32f4xx.o
-    0x08002fc0   0x00000010   Code   RO         2990    i.UART_DMAAbortOnError  stm32f4xx_hal_uart.o
-    0x08002fd0   0x0000004e   Code   RO         3000    i.UART_EndRxTransfer  stm32f4xx_hal_uart.o
-    0x0800301e   0x0000001a   Code   RO         3001    i.UART_EndTransmit_IT  stm32f4xx_hal_uart.o
-    0x08003038   0x000000c6   Code   RO         3003    i.UART_Receive_IT   stm32f4xx_hal_uart.o
-    0x080030fe   0x00000002   PAD
-    0x08003100   0x00000114   Code   RO         3004    i.UART_SetConfig    stm32f4xx_hal_uart.o
-    0x08003214   0x0000005e   Code   RO         3007    i.UART_Transmit_IT  stm32f4xx_hal_uart.o
-    0x08003272   0x00000074   Code   RO         3008    i.UART_WaitOnFlagUntilTimeout  stm32f4xx_hal_uart.o
-    0x080032e6   0x00000002   PAD
-    0x080032e8   0x0000000c   Code   RO          279    i.USART1_IRQHandler  stm32f4xx_it.o
-    0x080032f4   0x00000002   Code   RO          280    i.UsageFault_Handler  stm32f4xx_it.o
-    0x080032f6   0x00000002   PAD
-    0x080032f8   0x00000020   Code   RO         3572    i.__0printf$8       mc_w.l(printf8.o)
-    0x08003318   0x00000020   Code   RO         2520    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x08003338   0x0000000e   Code   RO         3692    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08003346   0x00000002   Code   RO         3693    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08003348   0x0000000e   Code   RO         3694    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08003356   0x00000002   PAD
-    0x08003358   0x00000410   Code   RO         3579    i._printf_core      mc_w.l(printf8.o)
-    0x08003768   0x00000024   Code   RO         3580    i._printf_post_padding  mc_w.l(printf8.o)
-    0x0800378c   0x0000002e   Code   RO         3581    i._printf_pre_padding  mc_w.l(printf8.o)
-    0x080037ba   0x00000054   Code   RO          376    i.cbd2              cbd.o
-    0x0800380e   0x00000002   PAD
-    0x08003810   0x00000010   Code   RO          805    i.exit              aes.o
-    0x08003820   0x00000018   Code   RO         2665    i.fputc             stm32f4xx_hal.o
-    0x08003838   0x00000006   Code   RO          528    i.fqmul             ntt.o
-    0x0800383e   0x00000002   PAD
-    0x08003840   0x00000050   Code   RO         3626    i.free              mc_w.l(malloc.o)
-    0x08003890   0x00000138   Code   RO           15    i.generate_and_display_keys  main.o
-    0x080039c8   0x000000ae   Code   RO          985    i.keccak_absorb     fips202.o
-    0x08003a76   0x0000003a   Code   RO          990    i.keccak_squeezeblocks  fips202.o
-    0x08003ab0   0x00000016   Code   RO          377    i.load32_littleendian  cbd.o
-    0x08003ac6   0x0000002a   Code   RO          991    i.load64            fips202.o
-    0x08003af0   0x00000030   Code   RO           16    i.main              main.o
-    0x08003b20   0x0000006c   Code   RO         3627    i.malloc            mc_w.l(malloc.o)
-    0x08003b8c   0x0000001a   Code   RO          415    i.pack_ciphertext   indcpa.o
-    0x08003ba6   0x0000001e   Code   RO          416    i.pack_pk           indcpa.o
-    0x08003bc4   0x00000004   Code   RO          417    i.pack_sk           indcpa.o
-    0x08003bc8   0x00000052   Code   RO          418    i.rej_uniform       indcpa.o
-    0x08003c1a   0x00000034   Code   RO          992    i.sha3_256          fips202.o
-    0x08003c4e   0x00000034   Code   RO         1004    i.sha3_512          fips202.o
-    0x08003c82   0x00000028   Code   RO         1011    i.shake128_absorb   fips202.o
-    0x08003caa   0x00000006   Code   RO         1013    i.shake128_ctx_release  fips202.o
-    0x08003cb0   0x00000008   Code   RO         1020    i.shake128_squeezeblocks  fips202.o
-    0x08003cb8   0x0000005c   Code   RO         1021    i.shake256          fips202.o
-    0x08003d14   0x00000028   Code   RO         1022    i.shake256_absorb   fips202.o
-    0x08003d3c   0x00000006   Code   RO         1024    i.shake256_ctx_release  fips202.o
-    0x08003d42   0x00000008   Code   RO         1031    i.shake256_squeezeblocks  fips202.o
-    0x08003d4a   0x00000022   Code   RO         1032    i.store64           fips202.o
-    0x08003d6c   0x0000001a   Code   RO          419    i.unpack_ciphertext  indcpa.o
-    0x08003d86   0x0000001e   Code   RO          420    i.unpack_pk         indcpa.o
-    0x08003da4   0x00000004   Code   RO          421    i.unpack_sk         indcpa.o
-    0x08003da8   0x00000100   Data   RO          529    .constdata          ntt.o
-    0x08003ea8   0x000000c0   Data   RO         1033    .constdata          fips202.o
-    0x08003f68   0x00000010   Data   RO         3317    .constdata          system_stm32f4xx.o
-    0x08003f78   0x00000008   Data   RO         3318    .constdata          system_stm32f4xx.o
-    0x08003f80   0x00000020   Data   RO         3690    Region$$Table       anon$$obj.o
+    0x08000638   0x00000040   Code   RO         2525    i.HAL_NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x08000678   0x00000024   Code   RO         2526    i.HAL_NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
+    0x0800069c   0x0000014c   Code   RO         1731    i.HAL_RCC_ClockConfig  stm32f4xx_hal_rcc.o
+    0x080007e8   0x0000000c   Code   RO         1736    i.HAL_RCC_GetHCLKFreq  stm32f4xx_hal_rcc.o
+    0x080007f4   0x00000020   Code   RO         1738    i.HAL_RCC_GetPCLK1Freq  stm32f4xx_hal_rcc.o
+    0x08000814   0x00000020   Code   RO         1739    i.HAL_RCC_GetPCLK2Freq  stm32f4xx_hal_rcc.o
+    0x08000834   0x0000006c   Code   RO         1740    i.HAL_RCC_GetSysClockFreq  stm32f4xx_hal_rcc.o
+    0x080008a0   0x000003c0   Code   RO         1743    i.HAL_RCC_OscConfig  stm32f4xx_hal_rcc.o
+    0x08000c60   0x0000007c   Code   RO         1630    i.HAL_RNG_GenerateRandomNumber  stm32f4xx_hal_rng.o
+    0x08000cdc   0x00000034   Code   RO         1637    i.HAL_RNG_Init      stm32f4xx_hal_rng.o
+    0x08000d10   0x00000028   Code   RO          200    i.HAL_RNG_MspInit   rng.o
+    0x08000d38   0x00000028   Code   RO         2530    i.HAL_SYSTICK_Config  stm32f4xx_hal_cortex.o
+    0x08000d60   0x00000002   Code   RO         2971    i.HAL_UARTEx_RxEventCallback  stm32f4xx_hal_uart.o
+    0x08000d62   0x00000002   Code   RO         2985    i.HAL_UART_ErrorCallback  stm32f4xx_hal_uart.o
+    0x08000d64   0x00000228   Code   RO         2988    i.HAL_UART_IRQHandler  stm32f4xx_hal_uart.o
+    0x08000f8c   0x00000064   Code   RO         2989    i.HAL_UART_Init     stm32f4xx_hal_uart.o
+    0x08000ff0   0x0000007c   Code   RO          242    i.HAL_UART_MspInit  usart.o
+    0x0800106c   0x00000002   Code   RO         2995    i.HAL_UART_RxCpltCallback  stm32f4xx_hal_uart.o
+    0x0800106e   0x000000be   Code   RO         2997    i.HAL_UART_Transmit  stm32f4xx_hal_uart.o
+    0x0800112c   0x00000002   Code   RO         3000    i.HAL_UART_TxCpltCallback  stm32f4xx_hal_uart.o
+    0x0800112e   0x00000002   Code   RO          285    i.HardFault_Handler  stm32f4xx_it.o
+    0x08001130   0x00001260   Code   RO          996    i.KeccakF1600_StatePermute  fips202.o
+    0x08002390   0x0000002c   Code   RO          175    i.MX_GPIO_Init      gpio.o
+    0x080023bc   0x00000024   Code   RO          201    i.MX_RNG_Init       rng.o
+    0x080023e0   0x00000038   Code   RO          243    i.MX_USART1_UART_Init  usart.o
+    0x08002418   0x00000002   Code   RO          286    i.MemManage_Handler  stm32f4xx_it.o
+    0x0800241a   0x00000002   Code   RO          287    i.NMI_Handler       stm32f4xx_it.o
+    0x0800241c   0x00000048   Code   RO          417    i.PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk  indcpa.o
+    0x08002464   0x0000001a   Code   RO          731    i.PQCLEAN_KYBER768_CLEAN_barrett_reduce  reduce.o
+    0x0800247e   0x00000058   Code   RO          537    i.PQCLEAN_KYBER768_CLEAN_basemul  ntt.o
+    0x080024d6   0x0000001e   Code   RO          770    i.PQCLEAN_KYBER768_CLEAN_cmov  verify.o
+    0x080024f4   0x00000098   Code   RO          507    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_dec  kem.o
+    0x0800258c   0x0000005e   Code   RO          508    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_enc  kem.o
+    0x080025ea   0x0000003a   Code   RO          509    i.PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair  kem.o
+    0x08002624   0x000000c0   Code   RO          418    i.PQCLEAN_KYBER768_CLEAN_gen_matrix  indcpa.o
+    0x080026e4   0x00000060   Code   RO          419    i.PQCLEAN_KYBER768_CLEAN_indcpa_dec  indcpa.o
+    0x08002744   0x00000100   Code   RO          420    i.PQCLEAN_KYBER768_CLEAN_indcpa_enc  indcpa.o
+    0x08002844   0x00000046   Code   RO          421    i.PQCLEAN_KYBER768_CLEAN_indcpa_gena  indcpa.o
+    0x0800288a   0x000000d6   Code   RO          422    i.PQCLEAN_KYBER768_CLEAN_indcpa_keypair  indcpa.o
+    0x08002960   0x00000088   Code   RO          538    i.PQCLEAN_KYBER768_CLEAN_invntt  ntt.o
+    0x080029e8   0x00000028   Code   RO          749    i.PQCLEAN_KYBER768_CLEAN_kyber_shake128_absorb  symmetric-shake.o
+    0x08002a10   0x00000028   Code   RO          750    i.PQCLEAN_KYBER768_CLEAN_kyber_shake256_prf  symmetric-shake.o
+    0x08002a38   0x00000016   Code   RO          732    i.PQCLEAN_KYBER768_CLEAN_montgomery_reduce  reduce.o
+    0x08002a4e   0x00000002   PAD
+    0x08002a50   0x0000005c   Code   RO          539    i.PQCLEAN_KYBER768_CLEAN_ntt  ntt.o
+    0x08002aac   0x0000001a   Code   RO          575    i.PQCLEAN_KYBER768_CLEAN_poly_add  poly.o
+    0x08002ac6   0x00000002   PAD
+    0x08002ac8   0x00000058   Code   RO          576    i.PQCLEAN_KYBER768_CLEAN_poly_basemul_montgomery  poly.o
+    0x08002b20   0x00000004   Code   RO          386    i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta1  cbd.o
+    0x08002b24   0x00000004   Code   RO          387    i.PQCLEAN_KYBER768_CLEAN_poly_cbd_eta2  cbd.o
+    0x08002b28   0x00000074   Code   RO          577    i.PQCLEAN_KYBER768_CLEAN_poly_compress  poly.o
+    0x08002b9c   0x0000003a   Code   RO          578    i.PQCLEAN_KYBER768_CLEAN_poly_decompress  poly.o
+    0x08002bd6   0x00000036   Code   RO          579    i.PQCLEAN_KYBER768_CLEAN_poly_frombytes  poly.o
+    0x08002c0c   0x0000002c   Code   RO          580    i.PQCLEAN_KYBER768_CLEAN_poly_frommsg  poly.o
+    0x08002c38   0x0000001e   Code   RO          581    i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta1  poly.o
+    0x08002c56   0x0000001e   Code   RO          582    i.PQCLEAN_KYBER768_CLEAN_poly_getnoise_eta2  poly.o
+    0x08002c74   0x00000004   Code   RO          583    i.PQCLEAN_KYBER768_CLEAN_poly_invntt_tomont  poly.o
+    0x08002c78   0x00000014   Code   RO          584    i.PQCLEAN_KYBER768_CLEAN_poly_ntt  poly.o
+    0x08002c8c   0x0000001a   Code   RO          585    i.PQCLEAN_KYBER768_CLEAN_poly_reduce  poly.o
+    0x08002ca6   0x0000001a   Code   RO          586    i.PQCLEAN_KYBER768_CLEAN_poly_sub  poly.o
+    0x08002cc0   0x00000044   Code   RO          587    i.PQCLEAN_KYBER768_CLEAN_poly_tobytes  poly.o
+    0x08002d04   0x00000022   Code   RO          588    i.PQCLEAN_KYBER768_CLEAN_poly_tomont  poly.o
+    0x08002d26   0x0000004c   Code   RO          589    i.PQCLEAN_KYBER768_CLEAN_poly_tomsg  poly.o
+    0x08002d72   0x00000026   Code   RO          671    i.PQCLEAN_KYBER768_CLEAN_polyvec_add  polyvec.o
+    0x08002d98   0x00000042   Code   RO          672    i.PQCLEAN_KYBER768_CLEAN_polyvec_basemul_acc_montgomery  polyvec.o
+    0x08002dda   0x0000008a   Code   RO          673    i.PQCLEAN_KYBER768_CLEAN_polyvec_compress  polyvec.o
+    0x08002e64   0x00000072   Code   RO          674    i.PQCLEAN_KYBER768_CLEAN_polyvec_decompress  polyvec.o
+    0x08002ed6   0x00000020   Code   RO          675    i.PQCLEAN_KYBER768_CLEAN_polyvec_frombytes  polyvec.o
+    0x08002ef6   0x00000016   Code   RO          676    i.PQCLEAN_KYBER768_CLEAN_polyvec_invntt_tomont  polyvec.o
+    0x08002f0c   0x00000016   Code   RO          677    i.PQCLEAN_KYBER768_CLEAN_polyvec_ntt  polyvec.o
+    0x08002f22   0x00000016   Code   RO          678    i.PQCLEAN_KYBER768_CLEAN_polyvec_reduce  polyvec.o
+    0x08002f38   0x00000020   Code   RO          679    i.PQCLEAN_KYBER768_CLEAN_polyvec_tobytes  polyvec.o
+    0x08002f58   0x00000024   Code   RO          771    i.PQCLEAN_KYBER768_CLEAN_verify  verify.o
+    0x08002f7c   0x0000002c   Code   RO         1321    i.PQCLEAN_randombytes  randombytes.o
+    0x08002fa8   0x00000002   Code   RO          288    i.PendSV_Handler    stm32f4xx_it.o
+    0x08002faa   0x00000002   Code   RO          289    i.SVC_Handler       stm32f4xx_it.o
+    0x08002fac   0x00000004   Code   RO          290    i.SysTick_Handler   stm32f4xx_it.o
+    0x08002fb0   0x0000008c   Code   RO           14    i.SystemClock_Config  main.o
+    0x0800303c   0x00000010   Code   RO         3328    i.SystemInit        system_stm32f4xx.o
+    0x0800304c   0x00000010   Code   RO         3002    i.UART_DMAAbortOnError  stm32f4xx_hal_uart.o
+    0x0800305c   0x0000004e   Code   RO         3012    i.UART_EndRxTransfer  stm32f4xx_hal_uart.o
+    0x080030aa   0x0000001a   Code   RO         3013    i.UART_EndTransmit_IT  stm32f4xx_hal_uart.o
+    0x080030c4   0x000000c6   Code   RO         3015    i.UART_Receive_IT   stm32f4xx_hal_uart.o
+    0x0800318a   0x00000002   PAD
+    0x0800318c   0x00000114   Code   RO         3016    i.UART_SetConfig    stm32f4xx_hal_uart.o
+    0x080032a0   0x0000005e   Code   RO         3019    i.UART_Transmit_IT  stm32f4xx_hal_uart.o
+    0x080032fe   0x00000074   Code   RO         3020    i.UART_WaitOnFlagUntilTimeout  stm32f4xx_hal_uart.o
+    0x08003372   0x00000002   PAD
+    0x08003374   0x0000000c   Code   RO          291    i.USART1_IRQHandler  stm32f4xx_it.o
+    0x08003380   0x00000002   Code   RO          292    i.UsageFault_Handler  stm32f4xx_it.o
+    0x08003382   0x00000002   PAD
+    0x08003384   0x00000020   Code   RO         3584    i.__0printf$8       mc_w.l(printf8.o)
+    0x080033a4   0x00000020   Code   RO         2532    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x080033c4   0x0000000e   Code   RO         3704    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080033d2   0x00000002   Code   RO         3705    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080033d4   0x0000000e   Code   RO         3706    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080033e2   0x00000002   PAD
+    0x080033e4   0x00000410   Code   RO         3591    i._printf_core      mc_w.l(printf8.o)
+    0x080037f4   0x00000024   Code   RO         3592    i._printf_post_padding  mc_w.l(printf8.o)
+    0x08003818   0x0000002e   Code   RO         3593    i._printf_pre_padding  mc_w.l(printf8.o)
+    0x08003846   0x00000054   Code   RO          388    i.cbd2              cbd.o
+    0x0800389a   0x00000002   PAD
+    0x0800389c   0x00000010   Code   RO          817    i.exit              aes.o
+    0x080038ac   0x00000018   Code   RO         2677    i.fputc             stm32f4xx_hal.o
+    0x080038c4   0x00000006   Code   RO          540    i.fqmul             ntt.o
+    0x080038ca   0x00000002   PAD
+    0x080038cc   0x00000050   Code   RO         3638    i.free              mc_w.l(malloc.o)
+    0x0800391c   0x000001c0   Code   RO           15    i.generate_and_display_keys  main.o
+    0x08003adc   0x000000ae   Code   RO          997    i.keccak_absorb     fips202.o
+    0x08003b8a   0x0000003a   Code   RO         1002    i.keccak_squeezeblocks  fips202.o
+    0x08003bc4   0x00000016   Code   RO          389    i.load32_littleendian  cbd.o
+    0x08003bda   0x0000002a   Code   RO         1003    i.load64            fips202.o
+    0x08003c04   0x00000030   Code   RO           16    i.main              main.o
+    0x08003c34   0x0000006c   Code   RO         3639    i.malloc            mc_w.l(malloc.o)
+    0x08003ca0   0x0000001a   Code   RO          423    i.pack_ciphertext   indcpa.o
+    0x08003cba   0x0000001e   Code   RO          424    i.pack_pk           indcpa.o
+    0x08003cd8   0x00000004   Code   RO          425    i.pack_sk           indcpa.o
+    0x08003cdc   0x00000052   Code   RO          426    i.rej_uniform       indcpa.o
+    0x08003d2e   0x00000034   Code   RO         1004    i.sha3_256          fips202.o
+    0x08003d62   0x00000034   Code   RO         1016    i.sha3_512          fips202.o
+    0x08003d96   0x00000028   Code   RO         1023    i.shake128_absorb   fips202.o
+    0x08003dbe   0x00000006   Code   RO         1025    i.shake128_ctx_release  fips202.o
+    0x08003dc4   0x00000008   Code   RO         1032    i.shake128_squeezeblocks  fips202.o
+    0x08003dcc   0x0000005c   Code   RO         1033    i.shake256          fips202.o
+    0x08003e28   0x00000028   Code   RO         1034    i.shake256_absorb   fips202.o
+    0x08003e50   0x00000006   Code   RO         1036    i.shake256_ctx_release  fips202.o
+    0x08003e56   0x00000008   Code   RO         1043    i.shake256_squeezeblocks  fips202.o
+    0x08003e5e   0x00000022   Code   RO         1044    i.store64           fips202.o
+    0x08003e80   0x0000001a   Code   RO          427    i.unpack_ciphertext  indcpa.o
+    0x08003e9a   0x0000001e   Code   RO          428    i.unpack_pk         indcpa.o
+    0x08003eb8   0x00000004   Code   RO          429    i.unpack_sk         indcpa.o
+    0x08003ebc   0x00000100   Data   RO          541    .constdata          ntt.o
+    0x08003fbc   0x00000004   PAD
+    0x08003fc0   0x000000c0   Data   RO         1045    .constdata          fips202.o
+    0x08004080   0x00000010   Data   RO         3329    .constdata          system_stm32f4xx.o
+    0x08004090   0x00000008   Data   RO         3330    .constdata          system_stm32f4xx.o
+    0x08004098   0x00000020   Data   RO         3702    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x0000001c, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x0000000c   Data   RW         2666    .data               stm32f4xx_hal.o
-    0x2000000c   0x00000004   Data   RW         3319    .data               system_stm32f4xx.o
-    0x20000010   0x00000004   Data   RW         3668    .data               mc_w.l(stdout.o)
-    0x20000014   0x00000004   Data   RW         3671    .data               mc_w.l(mvars.o)
-    0x20000018   0x00000004   Data   RW         3672    .data               mc_w.l(mvars.o)
+    0x20000000   0x0000000c   Data   RW         2678    .data               stm32f4xx_hal.o
+    0x2000000c   0x00000004   Data   RW         3331    .data               system_stm32f4xx.o
+    0x20000010   0x00000004   Data   RW         3680    .data               mc_w.l(stdout.o)
+    0x20000014   0x00000004   Data   RW         3683    .data               mc_w.l(mvars.o)
+    0x20000018   0x00000004   Data   RW         3684    .data               mc_w.l(mvars.o)
 
 
     Execution Region ER_ZI (Base: 0x2000001c, Size: 0x00006054, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x2000001c   0x00000010   Zero   RW          190    .bss                rng.o
-    0x2000002c   0x00000044   Zero   RW          232    .bss                usart.o
+    0x2000001c   0x00000010   Zero   RW          202    .bss                rng.o
+    0x2000002c   0x00000044   Zero   RW          244    .bss                usart.o
     0x20000070   0x00002000   Zero   RW            2    HEAP                startup_stm32f407xx.o
     0x20002070   0x00004000   Zero   RW            1    STACK               startup_stm32f407xx.o
 
@@ -2092,12 +2107,12 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         16          8          0          0          0        459   aes.o
-       114          0          0          0          0       3186   cbd.o
+       114          0          0          0          0       2802   cbd.o
       5316          4        192          0          0      12501   fips202.o
         44          6          0          0          0        787   gpio.o
-       960          0          0          0          0      10948   indcpa.o
+      1102          0          0          0          0      12111   indcpa.o
        304          0          0          0          0       2876   kem.o
-       504        120          0          0          0     662520   main.o
+       640        154          0          0          0     663532   main.o
        322         12        256          0          0       3533   ntt.o
        700          4          0          0          0      10361   poly.o
        486          0          0          0          0       6623   polyvec.o
@@ -2120,9 +2135,9 @@ Image component sizes
         66          0          0          0          0       1766   verify.o
 
     ----------------------------------------------------------------------
-     13730        402        896         16      24660     798862   Object Totals
+     14006        436        900         16      24660     800653   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        20          0          0          0          0          0   (incl. Padding)
+        18          0          4          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2168,15 +2183,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     15392        492        896         28      24660     787882   Grand Totals
-     15392        492        896         28      24660     787882   ELF Image Totals
-     15392        492        896         28          0          0   ROM Totals
+     15668        526        900         28      24660     789473   Grand Totals
+     15668        526        900         28      24660     789473   ELF Image Totals
+     15668        526        900         28          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                16288 (  15.91kB)
+    Total RO  Size (Code + RO Data)                16568 (  16.18kB)
     Total RW  Size (RW Data + ZI Data)             24688 (  24.11kB)
-    Total ROM Size (Code + RO Data + RW Data)      16316 (  15.93kB)
+    Total ROM Size (Code + RO Data + RW Data)      16596 (  16.21kB)
 
 ==============================================================================
 

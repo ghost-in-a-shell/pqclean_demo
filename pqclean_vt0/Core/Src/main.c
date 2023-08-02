@@ -23,6 +23,8 @@
 #include "gpio.h"
 #include "api.h"
 
+#include "indcpa.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -60,10 +62,12 @@ void SystemClock_Config(void);
 
 void generate_and_display_keys() {
   uint8_t pk[PQCLEAN_KYBER768_CLEAN_CRYPTO_PUBLICKEYBYTES];
-  uint8_t sk[PQCLEAN_KYBER768_CLEAN_CRYPTO_SECRETKEYBYTES];
+  uint8_t sk[KYBER_INDCPA_SECRETKEYBYTES];
+	uint8_t sk_att1[KYBER_INDCPA_SECRETKEYBYTES];
 	uint8_t ct[PQCLEAN_KYBER768_CLEAN_CRYPTO_CIPHERTEXTBYTES];
 	uint8_t ss[PQCLEAN_KYBER768_CLEAN_CRYPTO_BYTES];
 	uint8_t ss0[PQCLEAN_KYBER768_CLEAN_CRYPTO_BYTES];
+	uint8_t aout[KYBER_K*KYBER_K*KYBER_POLYBYTES];
   int result = PQCLEAN_KYBER768_CLEAN_crypto_kem_keypair(pk, sk);
   
   if (result != 0) {
@@ -77,9 +81,29 @@ void generate_and_display_keys() {
   printf("\n");
   
   printf("Private key: ");
-  for (int i = 0; i < PQCLEAN_KYBER768_CLEAN_CRYPTO_SECRETKEYBYTES; i++) {
+  for (int i = 0; i < KYBER_INDCPA_SECRETKEYBYTES; i++) {
     printf("%02x", sk[i]);
   }
+	
+	printf("\n");
+	printf("a: ");
+	PQCLEAN_KYBER768_CLEAN_indcpa_gena(aout,pk);
+	for (int i = 0; i < KYBER_K*KYBER_K*KYBER_POLYBYTES; i++) {
+    printf("%02x", aout[i]);
+  }
+  printf("\n");
+	
+	
+	printf("\n");
+	printf("private key attack1 result: ");
+	PQCLEAN_KYBER768_CLEAN_ATTACK1_indcpa_gensk(pk, sk_att1);
+	for (int i = 0; i < KYBER_INDCPA_SECRETKEYBYTES; i++) {
+    printf("%02x", sk_att1[i]);
+  }
+  printf("\n");
+	
+	
+	
   printf("\n");
 	printf("ct: ");
 	PQCLEAN_KYBER768_CLEAN_crypto_kem_enc(ct, ss,pk);
